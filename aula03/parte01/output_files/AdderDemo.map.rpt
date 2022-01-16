@@ -1,5 +1,5 @@
 Analysis & Synthesis report for AdderDemo
-Tue Mar 29 15:13:03 2022
+Tue Mar 29 15:27:19 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -43,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 29 15:13:03 2022       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 29 15:27:19 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; AdderDemo                                   ;
 ; Top-level Entity Name              ; AdderDemo                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 16                                          ;
-;     Total combinational functions  ; 16                                          ;
+; Total logic elements               ; 17                                          ;
+;     Total combinational functions  ; 17                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 34                                          ;
@@ -180,17 +180,17 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 16           ;
+; Estimated Total logic elements              ; 17           ;
 ;                                             ;              ;
-; Total combinational functions               ; 16           ;
+; Total combinational functions               ; 17           ;
 ; Logic element usage by number of LUT inputs ;              ;
 ;     -- 4 input functions                    ; 0            ;
-;     -- 3 input functions                    ; 8            ;
-;     -- <=2 input functions                  ; 8            ;
+;     -- 3 input functions                    ; 7            ;
+;     -- <=2 input functions                  ; 10           ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
 ;     -- normal mode                          ; 8            ;
-;     -- arithmetic mode                      ; 8            ;
+;     -- arithmetic mode                      ; 9            ;
 ;                                             ;              ;
 ; Total registers                             ; 0            ;
 ;     -- Dedicated logic registers            ; 0            ;
@@ -201,26 +201,23 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 4            ;
-; Total fan-out                               ; 80           ;
-; Average fan-out                             ; 0.95         ;
+; Maximum fan-out                             ; 6            ;
+; Total fan-out                               ; 82           ;
+; Average fan-out                             ; 0.96         ;
 +---------------------------------------------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+-------------+--------------+
-; |AdderDemo                 ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |AdderDemo                                           ; AdderDemo   ; work         ;
-;    |adder4:inst|           ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|adder4:inst                               ; adder4      ; work         ;
-;       |fulladder:bit0|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|adder4:inst|fulladder:bit0                ; fulladder   ; work         ;
-;       |fulladder:bit1|     ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|adder4:inst|fulladder:bit1                ; fulladder   ; work         ;
-;    |addsub4:inst1|         ; 9 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|addsub4:inst1                             ; addsub4     ; work         ;
-;       |adder4:adder|       ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|addsub4:inst1|adder4:adder                ; adder4      ; work         ;
-;          |fulladder:bit0|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|addsub4:inst1|adder4:adder|fulladder:bit0 ; fulladder   ; work         ;
-;          |fulladder:bit1|  ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|addsub4:inst1|adder4:adder|fulladder:bit1 ; fulladder   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                   ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+-------------+--------------+
+; |AdderDemo                 ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |AdderDemo                            ; AdderDemo   ; work         ;
+;    |adder4:inst|           ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|adder4:inst                ; adder4      ; work         ;
+;       |fulladder:bit0|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|adder4:inst|fulladder:bit0 ; fulladder   ; work         ;
+;       |fulladder:bit1|     ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|adder4:inst|fulladder:bit1 ; fulladder   ; work         ;
+;    |addsub4:inst1|         ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AdderDemo|addsub4:inst1              ; addsub4     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -245,17 +242,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 34                          ;
-; cycloneiii_lcell_comb ; 17                          ;
-;     arith             ; 8                           ;
-;         2 data inputs ; 1                           ;
+; cycloneiii_lcell_comb ; 18                          ;
+;     arith             ; 9                           ;
+;         2 data inputs ; 2                           ;
 ;         3 data inputs ; 7                           ;
 ;     normal            ; 9                           ;
-;         0 data inputs ; 3                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 1                           ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 6                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.30                        ;
-; Average LUT depth     ; 1.82                        ;
+; Max LUT depth         ; 2.40                        ;
+; Average LUT depth     ; 1.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -274,7 +271,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Mar 29 15:12:54 2022
+    Info: Processing started: Tue Mar 29 15:27:10 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AdderDemo -c AdderDemo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -287,13 +284,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file Adder4.
 Info (12021): Found 1 design units, including 1 entities, in source file AdderDemo.bdf
     Info (12023): Found entity 1: AdderDemo
 Info (12021): Found 2 design units, including 1 entities, in source file AddSub4.vhd
-    Info (12022): Found design unit 1: addsub4-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte01/AddSub4.vhd Line: 11
-    Info (12023): Found entity 1: addsub4 File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte01/AddSub4.vhd Line: 4
+    Info (12022): Found design unit 1: addsub4-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte01/AddSub4.vhd Line: 12
+    Info (12023): Found entity 1: addsub4 File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte01/AddSub4.vhd Line: 5
 Info (12127): Elaborating entity "AdderDemo" for the top level hierarchy
 Info (12128): Elaborating entity "adder4" for hierarchy "adder4:inst"
 Info (12129): Elaborating entity "fulladder" using architecture "A:behavioral" for hierarchy "adder4:inst|fulladder:bit0" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte01/Adder4.vhd Line: 14
 Info (12128): Elaborating entity "addsub4" for hierarchy "addsub4:inst1"
-Info (12129): Elaborating entity "adder4" using architecture "A:structural" for hierarchy "addsub4:inst1|adder4:adder" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte01/AddSub4.vhd Line: 15
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[9]" is stuck at GND
     Warning (13410): Pin "LEDR[8]" is stuck at GND
@@ -306,14 +302,14 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "SW[8]"
-Info (21057): Implemented 50 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 51 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 15 output pins
-    Info (21061): Implemented 16 logic cells
+    Info (21061): Implemented 17 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 922 megabytes
-    Info: Processing ended: Tue Mar 29 15:13:03 2022
+    Info: Peak virtual memory: 917 megabytes
+    Info: Processing ended: Tue Mar 29 15:27:19 2022
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Total CPU time (on all processors): 00:00:20
 
 
