@@ -44,11 +44,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[13]",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[0]",
+					"name" : "SW[13]",
 					"strict" : false
 				},
 				{
@@ -64,11 +64,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[14]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[10]",
+					"name" : "SW[11]",
 					"strict" : false
 				},
 				{
@@ -76,7 +72,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[11]",
+					"name" : "SW[10]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[14]",
 					"strict" : false
 				},
 				{

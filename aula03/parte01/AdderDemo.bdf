@@ -251,9 +251,26 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
+	(rect 384 152 416 184)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst5" (rect 3 21 27 34)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 25 11)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 25 11)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(symbol
 	(rect 472 200 632 312)
 	(text "addsub4" (rect 5 0 47 11)(font "Arial" ))
-	(text "inst1" (rect 8 96 32 109)(font "Intel Clear" ))
+	(text "inst1" (rect 8 96 31 107)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -279,35 +296,18 @@ https://fpgasoftware.intel.com/eula.
 		(pt 160 32)
 		(output)
 		(text "sum[3..0]" (rect 0 0 46 11)(font "Arial" ))
-		(text "sum[3..0]" (rect 101 27 147 38)(font "Arial" ))
+		(text "sum[3..0]" (rect 101 27 139 38)(font "Arial" ))
 		(line (pt 160 32)(pt 144 32)(line_width 3))
 	)
 	(port
 		(pt 160 48)
 		(output)
 		(text "cout" (rect 0 0 21 11)(font "Arial" ))
-		(text "cout" (rect 122 43 143 54)(font "Arial" ))
+		(text "cout" (rect 122 43 139 54)(font "Arial" ))
 		(line (pt 160 48)(pt 144 48))
 	)
 	(drawing
 		(rectangle (rect 16 16 144 96))
-	)
-)
-(symbol
-	(rect 384 152 416 184)
-	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
-	(text "inst5" (rect 3 21 27 34)(font "Intel Clear" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 18 0 25 11)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 25 11)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0))
-	)
-	(drawing
-		(line (pt 8 8)(pt 16 16))
-		(line (pt 16 16)(pt 24 8))
-		(line (pt 8 8)(pt 24 8))
 	)
 )
 (connector
