@@ -10,7 +10,7 @@ use ieee.std_logic_1164.all;
 
 entity mux2_1 is
 	port(inputs : in  std_logic_vector(2 downto 0);
-		  output : out std_logic                 );
+		  output : out std_logic                  );
 end mux2_1;
 
 architecture behaveproc of mux2_1 is

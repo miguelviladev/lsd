@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Mux2_1Demo
-Tue Mar 22 11:56:22 2022
+Tue Mar 22 12:47:14 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -43,16 +43,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 22 11:56:22 2022       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 22 12:47:14 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; Mux2_1Demo                                  ;
-; Top-level Entity Name              ; Mux2_1Demo                                  ;
+; Top-level Entity Name              ; Mux4_1Demo                                  ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1                                           ;
-;     Total combinational functions  ; 1                                           ;
+; Total logic elements               ; 2                                           ;
+;     Total combinational functions  ; 2                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 4                                           ;
+; Total pins                         ; 7                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -66,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; Mux2_1Demo         ; Mux2_1Demo         ;
+; Top-level entity name                                            ; Mux4_1Demo         ; Mux2_1Demo         ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -167,41 +167,41 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                            ; Library ;
 +----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------+---------+
-; Mux2_1.vhd                       ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux2_1.vhd     ;         ;
-; Mux2_1Demo.bdf                   ; yes             ; User Block Diagram/Schematic File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux2_1Demo.bdf ;         ;
+; Mux4_1.vhd                       ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux4_1.vhd     ;         ;
+; Mux4_1Demo.bdf                   ; yes             ; User Block Diagram/Schematic File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux4_1Demo.bdf ;         ;
 +----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                        ;
-+---------------------------------------------+----------------------+
-; Resource                                    ; Usage                ;
-+---------------------------------------------+----------------------+
-; Estimated Total logic elements              ; 1                    ;
-;                                             ;                      ;
-; Total combinational functions               ; 1                    ;
-; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 0                    ;
-;     -- 3 input functions                    ; 1                    ;
-;     -- <=2 input functions                  ; 0                    ;
-;                                             ;                      ;
-; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 1                    ;
-;     -- arithmetic mode                      ; 0                    ;
-;                                             ;                      ;
-; Total registers                             ; 0                    ;
-;     -- Dedicated logic registers            ; 0                    ;
-;     -- I/O registers                        ; 0                    ;
-;                                             ;                      ;
-; I/O pins                                    ; 4                    ;
-;                                             ;                      ;
-; Embedded Multiplier 9-bit elements          ; 0                    ;
-;                                             ;                      ;
-; Maximum fan-out node                        ; mux2_1:inst|output~0 ;
-; Maximum fan-out                             ; 1                    ;
-; Total fan-out                               ; 8                    ;
-; Average fan-out                             ; 0.89                 ;
-+---------------------------------------------+----------------------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 2            ;
+;                                             ;              ;
+; Total combinational functions               ; 2            ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 2            ;
+;     -- 3 input functions                    ; 0            ;
+;     -- <=2 input functions                  ; 0            ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 2            ;
+;     -- arithmetic mode                      ; 0            ;
+;                                             ;              ;
+; Total registers                             ; 0            ;
+;     -- Dedicated logic registers            ; 0            ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 7            ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 2            ;
+; Total fan-out                               ; 16           ;
+; Average fan-out                             ; 1.00         ;
++---------------------------------------------+--------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -209,8 +209,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+-------------+--------------+
-; |Mux2_1Demo                ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |Mux2_1Demo             ; Mux2_1Demo  ; work         ;
-;    |mux2_1:inst|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mux2_1Demo|mux2_1:inst ; mux2_1      ; work         ;
+; |Mux4_1Demo                ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 7    ; 0            ; |Mux4_1Demo             ; Mux4_1Demo  ; work         ;
+;    |mux4_1:inst|           ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mux4_1Demo|mux4_1:inst ; mux4_1      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -235,13 +235,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         3 data inputs ; 1                           ;
+; boundary_port         ; 7                           ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         4 data inputs ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.75                        ;
 +-----------------------+-----------------------------+
 
 
@@ -260,7 +260,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Mar 22 11:56:16 2022
+    Info: Processing started: Tue Mar 22 12:47:08 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mux2_1Demo -c Mux2_1Demo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -269,18 +269,25 @@ Info (12021): Found 2 design units, including 1 entities, in source file Mux2_1.
     Info (12023): Found entity 1: mux2_1 File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux2_1.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file Mux2_1Demo.bdf
     Info (12023): Found entity 1: Mux2_1Demo
-Info (12127): Elaborating entity "Mux2_1Demo" for the top level hierarchy
-Info (12128): Elaborating entity "mux2_1" for hierarchy "mux2_1:inst"
+Info (12021): Found 2 design units, including 1 entities, in source file Mux4_1.vhd
+    Info (12022): Found design unit 1: mux4_1-behaviour File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux4_1.vhd Line: 10
+    Info (12023): Found entity 1: mux4_1 File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux4_1.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file Mux4_1Demo.bdf
+    Info (12023): Found entity 1: Mux4_1Demo
+Info (12127): Elaborating entity "Mux4_1Demo" for the top level hierarchy
+Info (12128): Elaborating entity "mux4_1" for hierarchy "mux4_1:inst"
+Info (10041): Inferred latch for "outport" at Mux4_1.vhd(12) File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux4_1.vhd Line: 12
+Warning (14026): LATCH primitive "mux4_1:inst|outport" is permanently enabled File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux4_1.vhd Line: 7
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Info (21057): Implemented 9 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 1 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 937 megabytes
-    Info: Processing ended: Tue Mar 22 11:56:22 2022
+    Info (21061): Implemented 2 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 939 megabytes
+    Info: Processing ended: Tue Mar 22 12:47:14 2022
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:13
 

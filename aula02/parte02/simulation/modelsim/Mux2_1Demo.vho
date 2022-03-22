@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition"
 
--- DATE "03/22/2022 11:56:34"
+-- DATE "03/22/2022 12:47:26"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -75,22 +75,25 @@ LIBRARY IEEE;
 USE CYCLONEIVE.CYCLONEIVE_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	Mux2_1Demo IS
+ENTITY 	Mux4_1Demo IS
     PORT (
 	LEDR : OUT std_logic_vector(0 DOWNTO 0);
-	KEY : IN std_logic_vector(0 DOWNTO 0);
-	SW : IN std_logic_vector(1 DOWNTO 0)
+	SW : IN std_logic_vector(3 DOWNTO 0);
+	KEY : IN std_logic_vector(1 DOWNTO 0)
 	);
-END Mux2_1Demo;
+END Mux4_1Demo;
 
 -- Design Ports Information
 -- LEDR[0]	=>  Location: PIN_G19,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SW[1]	=>  Location: PIN_AC28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SW[0]	=>  Location: PIN_AB28,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- KEY[0]	=>  Location: PIN_M23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SW[2]	=>  Location: PIN_AC27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KEY[1]	=>  Location: PIN_M21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SW[0]	=>  Location: PIN_AB28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SW[3]	=>  Location: PIN_AD27,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
-ARCHITECTURE structure OF Mux2_1Demo IS
+ARCHITECTURE structure OF Mux4_1Demo IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -101,13 +104,17 @@ SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_LEDR : std_logic_vector(0 DOWNTO 0);
-SIGNAL ww_KEY : std_logic_vector(0 DOWNTO 0);
-SIGNAL ww_SW : std_logic_vector(1 DOWNTO 0);
+SIGNAL ww_SW : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_KEY : std_logic_vector(1 DOWNTO 0);
 SIGNAL \LEDR[0]~output_o\ : std_logic;
-SIGNAL \SW[0]~input_o\ : std_logic;
-SIGNAL \SW[1]~input_o\ : std_logic;
+SIGNAL \SW[3]~input_o\ : std_logic;
 SIGNAL \KEY[0]~input_o\ : std_logic;
-SIGNAL \inst|output~0_combout\ : std_logic;
+SIGNAL \SW[0]~input_o\ : std_logic;
+SIGNAL \SW[2]~input_o\ : std_logic;
+SIGNAL \KEY[1]~input_o\ : std_logic;
+SIGNAL \inst|outport~0_combout\ : std_logic;
+SIGNAL \SW[1]~input_o\ : std_logic;
+SIGNAL \inst|outport~1_combout\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -119,8 +126,8 @@ END COMPONENT;
 BEGIN
 
 LEDR <= ww_LEDR;
-ww_KEY <= KEY;
 ww_SW <= SW;
+ww_KEY <= KEY;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
@@ -138,31 +145,20 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \inst|output~0_combout\,
+	i => \inst|outport~1_combout\,
 	devoe => ww_devoe,
 	o => \LEDR[0]~output_o\);
 
--- Location: IOIBUF_X115_Y17_N1
-\SW[0]~input\ : cycloneive_io_ibuf
+-- Location: IOIBUF_X115_Y13_N8
+\SW[3]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(0),
-	o => \SW[0]~input_o\);
-
--- Location: IOIBUF_X115_Y14_N1
-\SW[1]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_SW(1),
-	o => \SW[1]~input_o\);
+	i => ww_SW(3),
+	o => \SW[3]~input_o\);
 
 -- Location: IOIBUF_X115_Y40_N8
 \KEY[0]~input\ : cycloneive_io_ibuf
@@ -175,21 +171,83 @@ PORT MAP (
 	i => ww_KEY(0),
 	o => \KEY[0]~input_o\);
 
--- Location: LCCOMB_X114_Y17_N8
-\inst|output~0\ : cycloneive_lcell_comb
+-- Location: IOIBUF_X115_Y17_N1
+\SW[0]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_SW(0),
+	o => \SW[0]~input_o\);
+
+-- Location: IOIBUF_X115_Y15_N8
+\SW[2]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_SW(2),
+	o => \SW[2]~input_o\);
+
+-- Location: IOIBUF_X115_Y53_N15
+\KEY[1]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_KEY(1),
+	o => \KEY[1]~input_o\);
+
+-- Location: LCCOMB_X114_Y17_N24
+\inst|outport~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \inst|output~0_combout\ = (\KEY[0]~input_o\ & ((\SW[1]~input_o\))) # (!\KEY[0]~input_o\ & (\SW[0]~input_o\))
+-- \inst|outport~0_combout\ = (\KEY[0]~input_o\ & (((\KEY[1]~input_o\)))) # (!\KEY[0]~input_o\ & ((\KEY[1]~input_o\ & ((\SW[2]~input_o\))) # (!\KEY[1]~input_o\ & (\SW[0]~input_o\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000011001100",
+	lut_mask => "1111101001000100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \KEY[0]~input_o\,
 	datab => \SW[0]~input_o\,
+	datac => \SW[2]~input_o\,
+	datad => \KEY[1]~input_o\,
+	combout => \inst|outport~0_combout\);
+
+-- Location: IOIBUF_X115_Y14_N1
+\SW[1]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_SW(1),
+	o => \SW[1]~input_o\);
+
+-- Location: LCCOMB_X114_Y17_N18
+\inst|outport~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst|outport~1_combout\ = (\inst|outport~0_combout\ & ((\SW[3]~input_o\) # ((!\KEY[0]~input_o\)))) # (!\inst|outport~0_combout\ & (((\SW[1]~input_o\ & \KEY[0]~input_o\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011100011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW[3]~input_o\,
+	datab => \inst|outport~0_combout\,
 	datac => \SW[1]~input_o\,
 	datad => \KEY[0]~input_o\,
-	combout => \inst|output~0_combout\);
+	combout => \inst|outport~1_combout\);
 
 ww_LEDR(0) <= \LEDR[0]~output_o\;
 END structure;

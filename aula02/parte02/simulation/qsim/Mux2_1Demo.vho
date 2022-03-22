@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition"
 
--- DATE "03/22/2022 11:10:37"
+-- DATE "03/22/2022 12:42:52"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -32,14 +32,15 @@ LIBRARY IEEE;
 USE CYCLONEIVE.CYCLONEIVE_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	mux2_1 IS
+ENTITY 	mux4_1 IS
     PORT (
-	inputs : IN std_logic_vector(2 DOWNTO 0);
-	output : OUT std_logic
+	selport : IN std_logic_vector(1 DOWNTO 0);
+	inpport : IN std_logic_vector(3 DOWNTO 0);
+	outport : OUT std_logic
 	);
-END mux2_1;
+END mux4_1;
 
-ARCHITECTURE structure OF mux2_1 IS
+ARCHITECTURE structure OF mux4_1 IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -49,79 +50,132 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_inputs : std_logic_vector(2 DOWNTO 0);
-SIGNAL ww_output : std_logic;
-SIGNAL \output~output_o\ : std_logic;
-SIGNAL \inputs[1]~input_o\ : std_logic;
-SIGNAL \inputs[0]~input_o\ : std_logic;
-SIGNAL \inputs[2]~input_o\ : std_logic;
-SIGNAL \output~0_combout\ : std_logic;
+SIGNAL ww_selport : std_logic_vector(1 DOWNTO 0);
+SIGNAL ww_inpport : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_outport : std_logic;
+SIGNAL \outport~output_o\ : std_logic;
+SIGNAL \inpport[2]~input_o\ : std_logic;
+SIGNAL \selport[1]~input_o\ : std_logic;
+SIGNAL \inpport[1]~input_o\ : std_logic;
+SIGNAL \selport[0]~input_o\ : std_logic;
+SIGNAL \inpport[0]~input_o\ : std_logic;
+SIGNAL \outport~0_combout\ : std_logic;
+SIGNAL \inpport[3]~input_o\ : std_logic;
+SIGNAL \outport~1_combout\ : std_logic;
 
 BEGIN
 
-ww_inputs <= inputs;
-output <= ww_output;
+ww_selport <= selport;
+ww_inpport <= inpport;
+outport <= ww_outport;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
-\output~output\ : cycloneive_io_obuf
+\outport~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \output~0_combout\,
+	i => \outport~1_combout\,
 	devoe => ww_devoe,
-	o => \output~output_o\);
+	o => \outport~output_o\);
 
-\inputs[1]~input\ : cycloneive_io_ibuf
+\inpport[2]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_inputs(1),
-	o => \inputs[1]~input_o\);
+	i => ww_inpport(2),
+	o => \inpport[2]~input_o\);
 
-\inputs[0]~input\ : cycloneive_io_ibuf
+\selport[1]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_inputs(0),
-	o => \inputs[0]~input_o\);
+	i => ww_selport(1),
+	o => \selport[1]~input_o\);
 
-\inputs[2]~input\ : cycloneive_io_ibuf
+\inpport[1]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_inputs(2),
-	o => \inputs[2]~input_o\);
+	i => ww_inpport(1),
+	o => \inpport[1]~input_o\);
 
-\output~0\ : cycloneive_lcell_comb
+\selport[0]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_selport(0),
+	o => \selport[0]~input_o\);
+
+\inpport[0]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_inpport(0),
+	o => \inpport[0]~input_o\);
+
+\outport~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \output~0_combout\ = (\inputs[2]~input_o\ & (\inputs[1]~input_o\)) # (!\inputs[2]~input_o\ & ((\inputs[0]~input_o\)))
+-- \outport~0_combout\ = (\selport[1]~input_o\ & (((\selport[0]~input_o\)))) # (!\selport[1]~input_o\ & ((\selport[0]~input_o\ & (\inpport[1]~input_o\)) # (!\selport[0]~input_o\ & ((\inpport[0]~input_o\)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101011001100",
+	lut_mask => "1110010111100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inputs[1]~input_o\,
-	datab => \inputs[0]~input_o\,
-	datad => \inputs[2]~input_o\,
-	combout => \output~0_combout\);
+	dataa => \selport[1]~input_o\,
+	datab => \inpport[1]~input_o\,
+	datac => \selport[0]~input_o\,
+	datad => \inpport[0]~input_o\,
+	combout => \outport~0_combout\);
 
-ww_output <= \output~output_o\;
+\inpport[3]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_inpport(3),
+	o => \inpport[3]~input_o\);
+
+\outport~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \outport~1_combout\ = (\selport[1]~input_o\ & ((\outport~0_combout\ & ((\inpport[3]~input_o\))) # (!\outport~0_combout\ & (\inpport[2]~input_o\)))) # (!\selport[1]~input_o\ & (((\outport~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111100000111000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inpport[2]~input_o\,
+	datab => \selport[1]~input_o\,
+	datac => \outport~0_combout\,
+	datad => \inpport[3]~input_o\,
+	combout => \outport~1_combout\);
+
+ww_outport <= \outport~output_o\;
 END structure;
 
 
