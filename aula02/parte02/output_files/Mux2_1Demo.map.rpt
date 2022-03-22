@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Mux2_1Demo
-Tue Mar 22 12:47:14 2022
+Tue Mar 22 18:27:32 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 22 12:47:14 2022       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 22 18:27:32 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; Mux2_1Demo                                  ;
 ; Top-level Entity Name              ; Mux4_1Demo                                  ;
@@ -151,8 +151,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -260,10 +260,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Mar 22 12:47:08 2022
+    Info: Processing started: Tue Mar 22 18:27:22 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mux2_1Demo -c Mux2_1Demo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file Mux2_1.vhd
     Info (12022): Found design unit 1: mux2_1-behaveproc File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux2_1.vhd Line: 16
     Info (12023): Found entity 1: mux2_1 File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte02/Mux2_1.vhd Line: 11
@@ -286,9 +286,9 @@ Info (21057): Implemented 9 device resources after synthesis - the final resourc
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 2 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 939 megabytes
-    Info: Processing ended: Tue Mar 22 12:47:14 2022
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 916 megabytes
+    Info: Processing ended: Tue Mar 22 18:27:32 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:21
 
 
