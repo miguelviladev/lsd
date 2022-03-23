@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all; 
  
 entity bin7segdecoder is 
-    port(bininput : in  std_logic_vector(3 downto 0);
+ port(bininput : in  std_logic_vector(3 downto 0);
 			enable   : in  std_logic;
          decout_n : out std_logic_vector(6 downto 0)); 
 end bin7segdecoder; 
