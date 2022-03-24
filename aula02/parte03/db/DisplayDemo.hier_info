@@ -1,19 +1,34 @@
-|DisplayDemoVHDL
-inputport[0] => bin7segdecoder:system_core.bininput[0]
-inputport[1] => bin7segdecoder:system_core.bininput[1]
-inputport[2] => bin7segdecoder:system_core.bininput[2]
-inputport[3] => bin7segdecoder:system_core.bininput[3]
-enableport => bin7segdecoder:system_core.enable
-outputport[0] << bin7segdecoder:system_core.decout_n[0]
-outputport[1] << bin7segdecoder:system_core.decout_n[1]
-outputport[2] << bin7segdecoder:system_core.decout_n[2]
-outputport[3] << bin7segdecoder:system_core.decout_n[3]
-outputport[4] << bin7segdecoder:system_core.decout_n[4]
-outputport[5] << bin7segdecoder:system_core.decout_n[5]
-outputport[6] << bin7segdecoder:system_core.decout_n[6]
+|DisplayDemo
+HEX0[0] <= bin7segdecoder:inst.decout_n[0]
+HEX0[1] <= bin7segdecoder:inst.decout_n[1]
+HEX0[2] <= bin7segdecoder:inst.decout_n[2]
+HEX0[3] <= bin7segdecoder:inst.decout_n[3]
+HEX0[4] <= bin7segdecoder:inst.decout_n[4]
+HEX0[5] <= bin7segdecoder:inst.decout_n[5]
+HEX0[6] <= bin7segdecoder:inst.decout_n[6]
+KEY[0] => bin7segdecoder:inst.enable
+SW[0] => bin7segdecoder:inst.bininput[0]
+SW[0] => LEDG[0].DATAIN
+SW[1] => bin7segdecoder:inst.bininput[1]
+SW[1] => LEDG[1].DATAIN
+SW[2] => bin7segdecoder:inst.bininput[2]
+SW[2] => LEDG[2].DATAIN
+SW[3] => bin7segdecoder:inst.bininput[3]
+SW[3] => LEDG[3].DATAIN
+LEDG[0] <= SW[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[1] <= SW[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[2] <= SW[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[3] <= SW[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[0] <= bin7segdecoder:inst.decout_n[0]
+LEDR[1] <= bin7segdecoder:inst.decout_n[1]
+LEDR[2] <= bin7segdecoder:inst.decout_n[2]
+LEDR[3] <= bin7segdecoder:inst.decout_n[3]
+LEDR[4] <= bin7segdecoder:inst.decout_n[4]
+LEDR[5] <= bin7segdecoder:inst.decout_n[5]
+LEDR[6] <= bin7segdecoder:inst.decout_n[6]
 
 
-|DisplayDemoVHDL|bin7segdecoder:system_core
+|DisplayDemo|bin7segdecoder:inst
 bininput[0] => Equal0.IN3
 bininput[0] => Equal1.IN0
 bininput[0] => Equal2.IN3

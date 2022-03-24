@@ -10,7 +10,7 @@ end bin7segdecoder;
 architecture behavioral of bin7segdecoder is  
 begin    
     decout_n <= "1111111" when (enable   = '0'   ) else  --disabled
-					 "1111001" when (bininput = "0001") else  --1 
+			       "1111001" when (bininput = "0001") else  --1 
                 "0100100" when (bininput = "0010") else  --2 
                 "0110000" when (bininput = "0011") else  --3 
                 "0011001" when (bininput = "0100") else  --4 
