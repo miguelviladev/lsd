@@ -1,0 +1,182 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte01/simulation/qsim
+Eadder4
+Z1 w1648122377
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 JX^YokbeM8:bL?Pj@;1Jd1
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 Lf2433zWNi5^RHNT=BHD60
+R0
+Z8 8AdderDemo.vho
+Z9 FAdderDemo.vho
+l0
+L35
+VRe`6BIVfimP;mmSKcga[:3
+!s100 l_PMRZkT?1]Zefde_7@WR0
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1648122377
+!i10b 1
+Z12 !s108 1648122377.000000
+Z13 !s90 -work|work|AdderDemo.vho|
+Z14 !s107 AdderDemo.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 6 adder4 0 22 Re`6BIVfimP;mmSKcga[:3
+l85
+L45
+VLAKM=`JHk9<h6QV3]7c;_1
+!s100 ]=1EbLlbFjkczBFO?a;lH3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eadder4_vhd_vec_tst
+Z17 w1648122376
+R5
+R6
+R0
+Z18 8Adder4Sim.vwf.vht
+Z19 FAdder4Sim.vwf.vht
+l0
+L32
+VUioOgN25L2kk=aZ[ZLKPA1
+!s100 o>;@g>m1_Y>?Ra]F`_J<Z2
+R10
+32
+R11
+!i10b 1
+R12
+Z20 !s90 -work|work|Adder4Sim.vwf.vht|
+Z21 !s107 Adder4Sim.vwf.vht|
+!i113 1
+R15
+R16
+Aadder4_arch
+R5
+R6
+Z22 DEx4 work 18 adder4_vhd_vec_tst 0 22 UioOgN25L2kk=aZ[ZLKPA1
+l51
+L34
+Z23 VzMK?0Dg;@LG6XkMS3W_=U3
+Z24 !s100 <TBPk3Uic:ez8N?[a`zRo2
+R10
+32
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 1
+R15
+R16
+Efulladder
+Z25 w1648120726
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+R8
+R9
+l0
+L35
+V<4D?P4O??EF5Z=2R;oMd03
+!s100 8D]iNmP4a<<KZ`6hmTG0h0
+R10
+32
+Z26 !s110 1648120727
+!i10b 1
+Z27 !s108 1648120727.000000
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 9 fulladder 0 22 <4D?P4O??EF5Z=2R;oMd03
+l68
+L45
+VDl2Z1ZE:<gN66lEkJQP]L0
+!s100 CzHbiSH0O>noZin8@H>_z3
+R10
+32
+R26
+!i10b 1
+R27
+R13
+R14
+!i113 1
+R15
+R16
+Efulladder_vhd_vec_tst
+R25
+R5
+R6
+R0
+Z28 8FullAdderSim.vwf.vht
+Z29 FFullAdderSim.vwf.vht
+l0
+L32
+VOizP<AXi`m26;5^OJ`8H<3
+!s100 jZ;oIC^VA=gWD;m<99@jo3
+R10
+32
+R26
+!i10b 1
+R27
+Z30 !s90 -work|work|FullAdderSim.vwf.vht|
+Z31 !s107 FullAdderSim.vwf.vht|
+!i113 1
+R15
+R16
+Afulladder_arch
+R5
+R6
+DEx4 work 21 fulladder_vhd_vec_tst 0 22 OizP<AXi`m26;5^OJ`8H<3
+l51
+L34
+VSJeGX7o9Si]bWATnf?:HT2
+!s100 9H[C^Jb6j>fHfPB^_2g7Z2
+R10
+32
+R26
+!i10b 1
+R27
+R30
+R31
+!i113 1
+R15
+R16
