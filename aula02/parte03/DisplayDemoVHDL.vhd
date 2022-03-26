@@ -17,5 +17,6 @@ begin
 								  enable => key(0),
 								  decout_n => signalout);
 	hex0 <= signalout;
+	ledr <= signalout;
 	ledg <= sw;
 end shell;

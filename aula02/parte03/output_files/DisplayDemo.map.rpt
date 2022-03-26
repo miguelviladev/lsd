@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DisplayDemo
-Sat Mar 26 17:56:16 2022
+Sat Mar 26 18:23:56 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 26 17:56:16 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 26 18:23:56 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; DisplayDemo                                 ;
 ; Top-level Entity Name              ; displaydemovhdl                             ;
@@ -201,8 +201,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; sw[3]~input ;
 ; Maximum fan-out                             ; 9           ;
-; Total fan-out                               ; 82          ;
-; Average fan-out                             ; 1.34        ;
+; Total fan-out                               ; 89          ;
+; Average fan-out                             ; 1.46        ;
 +---------------------------------------------+-------------+
 
 
@@ -247,15 +247,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 23                          ;
-; cycloneiii_lcell_comb ; 16                          ;
-;     normal            ; 16                          ;
-;         0 data inputs ; 1                           ;
+; cycloneiii_lcell_comb ; 15                          ;
+;     normal            ; 15                          ;
 ;         2 data inputs ; 5                           ;
 ;         3 data inputs ; 2                           ;
 ;         4 data inputs ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.86                        ;
+; Average LUT depth     ; 1.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -274,7 +273,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sat Mar 26 17:56:10 2022
+    Info: Processing started: Sat Mar 26 18:23:51 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DisplayDemo -c DisplayDemo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -287,16 +286,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file Display
     Info (12022): Found design unit 1: displaydemovhdl-shell File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 12
     Info (12023): Found entity 1: displaydemovhdl File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 4
 Info (12127): Elaborating entity "DisplayDemoVHDL" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at DisplayDemoVHDL.vhd(9): used implicit default value for signal "ledr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
 Info (12129): Elaborating entity "bin7segdecoder" using architecture "A:behavioral" for hierarchy "bin7segdecoder:system_core" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 15
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ledr[0]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
-    Warning (13410): Pin "ledr[1]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
-    Warning (13410): Pin "ledr[2]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
-    Warning (13410): Pin "ledr[3]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
-    Warning (13410): Pin "ledr[4]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
-    Warning (13410): Pin "ledr[5]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
-    Warning (13410): Pin "ledr[6]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -304,10 +294,10 @@ Info (21057): Implemented 38 device resources after synthesis - the final resour
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 18 output pins
     Info (21061): Implemented 15 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 940 megabytes
-    Info: Processing ended: Sat Mar 26 17:56:16 2022
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 938 megabytes
+    Info: Processing ended: Sat Mar 26 18:23:56 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:12
 
 
