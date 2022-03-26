@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY DisplayDemo
+set_global_assignment -name TOP_LEVEL_ENTITY DisplayDemoVHDL
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 19.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:38:28  MARCH 23, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Lite Edition"

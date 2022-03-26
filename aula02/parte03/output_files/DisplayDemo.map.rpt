@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DisplayDemo
-Thu Mar 24 10:24:10 2022
+Sat Mar 26 17:56:16 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -44,13 +44,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 24 10:24:10 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 26 17:56:16 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; DisplayDemo                                 ;
-; Top-level Entity Name              ; DisplayDemo                                 ;
+; Top-level Entity Name              ; displaydemovhdl                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 14                                          ;
-;     Total combinational functions  ; 14                                          ;
+; Total logic elements               ; 15                                          ;
+;     Total combinational functions  ; 15                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 23                                          ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; DisplayDemo        ; DisplayDemo        ;
+; Top-level entity name                                            ; DisplayDemoVHDL    ; DisplayDemo        ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
 ; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
@@ -153,8 +153,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -164,14 +164,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                ; Library ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
-; Bin7SegDecoder.vhd               ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/Bin7SegDecoder.vhd ;         ;
-; DisplayDemo.bdf                  ; yes             ; User Block Diagram/Schematic File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemo.bdf    ;         ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                 ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
+; Bin7SegDecoder.vhd               ; yes             ; User VHDL File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/Bin7SegDecoder.vhd  ;         ;
+; DisplayDemoVHDL.vhd              ; yes             ; User VHDL File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -179,16 +179,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 14          ;
+; Estimated Total logic elements              ; 15          ;
 ;                                             ;             ;
-; Total combinational functions               ; 14          ;
+; Total combinational functions               ; 15          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 7           ;
+;     -- 4 input functions                    ; 8           ;
 ;     -- 3 input functions                    ; 2           ;
 ;     -- <=2 input functions                  ; 5           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 14          ;
+;     -- normal mode                          ; 15          ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
 ; Total registers                             ; 0           ;
@@ -199,21 +199,21 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; SW[2]~input ;
+; Maximum fan-out node                        ; sw[3]~input ;
 ; Maximum fan-out                             ; 9           ;
-; Total fan-out                               ; 85          ;
-; Average fan-out                             ; 1.42        ;
+; Total fan-out                               ; 82          ;
+; Average fan-out                             ; 1.34        ;
 +---------------------------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Entity Name    ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+----------------+--------------+
-; |DisplayDemo               ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |DisplayDemo                     ; DisplayDemo    ; work         ;
-;    |bin7segdecoder:inst|   ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DisplayDemo|bin7segdecoder:inst ; bin7segdecoder ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name     ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-----------------+--------------+
+; |displaydemovhdl                ; 15 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |displaydemovhdl                            ; displaydemovhdl ; work         ;
+;    |bin7segdecoder:system_core| ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |displaydemovhdl|bin7segdecoder:system_core ; bin7segdecoder  ; work         ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -232,13 +232,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 17:1               ; 2 bits    ; 22 LEs        ; 16 LEs               ; 6 LEs                  ; No         ; |DisplayDemo|bin7segdecoder:inst|decout_n[6] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 17:1               ; 2 bits    ; 22 LEs        ; 16 LEs               ; 6 LEs                  ; No         ; |displaydemovhdl|bin7segdecoder:system_core|decout_n[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -247,14 +247,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 23                          ;
-; cycloneiii_lcell_comb ; 14                          ;
-;     normal            ; 14                          ;
+; cycloneiii_lcell_comb ; 16                          ;
+;     normal            ; 16                          ;
+;         0 data inputs ; 1                           ;
 ;         2 data inputs ; 5                           ;
 ;         3 data inputs ; 2                           ;
-;         4 data inputs ; 7                           ;
+;         4 data inputs ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.95                        ;
+; Average LUT depth     ; 1.86                        ;
 +-----------------------+-----------------------------+
 
 
@@ -273,31 +274,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Mar 24 10:24:01 2022
+    Info: Processing started: Sat Mar 26 17:56:10 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DisplayDemo -c DisplayDemo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file Bin7SegDecoder.vhd
     Info (12022): Found design unit 1: bin7segdecoder-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/Bin7SegDecoder.vhd Line: 10
     Info (12023): Found entity 1: bin7segdecoder File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/Bin7SegDecoder.vhd Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file DisplayDemo.bdf
     Info (12023): Found entity 1: DisplayDemo
 Info (12021): Found 2 design units, including 1 entities, in source file DisplayDemoVHDL.vhd
-    Info (12022): Found design unit 1: displaydemovhdl-shell File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 10
+    Info (12022): Found design unit 1: displaydemovhdl-shell File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 12
     Info (12023): Found entity 1: displaydemovhdl File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 4
-Info (12127): Elaborating entity "DisplayDemo" for the top level hierarchy
-Info (12128): Elaborating entity "bin7segdecoder" for hierarchy "bin7segdecoder:inst"
+Info (12127): Elaborating entity "DisplayDemoVHDL" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at DisplayDemoVHDL.vhd(9): used implicit default value for signal "ledr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
+Info (12129): Elaborating entity "bin7segdecoder" using architecture "A:behavioral" for hierarchy "bin7segdecoder:system_core" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 15
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ledr[0]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
+    Warning (13410): Pin "ledr[1]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
+    Warning (13410): Pin "ledr[2]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
+    Warning (13410): Pin "ledr[3]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
+    Warning (13410): Pin "ledr[4]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
+    Warning (13410): Pin "ledr[5]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
+    Warning (13410): Pin "ledr[6]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/DisplayDemoVHDL.vhd Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 37 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 18 output pins
-    Info (21061): Implemented 14 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 917 megabytes
-    Info: Processing ended: Thu Mar 24 10:24:10 2022
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+    Info (21061): Implemented 15 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 940 megabytes
+    Info: Processing ended: Sat Mar 26 17:56:16 2022
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
 
 

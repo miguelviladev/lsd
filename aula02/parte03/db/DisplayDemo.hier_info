@@ -1,34 +1,34 @@
-|DisplayDemo
-HEX0[0] <= bin7segdecoder:inst.decout_n[0]
-HEX0[1] <= bin7segdecoder:inst.decout_n[1]
-HEX0[2] <= bin7segdecoder:inst.decout_n[2]
-HEX0[3] <= bin7segdecoder:inst.decout_n[3]
-HEX0[4] <= bin7segdecoder:inst.decout_n[4]
-HEX0[5] <= bin7segdecoder:inst.decout_n[5]
-HEX0[6] <= bin7segdecoder:inst.decout_n[6]
-KEY[0] => bin7segdecoder:inst.enable
-SW[0] => bin7segdecoder:inst.bininput[0]
-SW[0] => LEDG[0].DATAIN
-SW[1] => bin7segdecoder:inst.bininput[1]
-SW[1] => LEDG[1].DATAIN
-SW[2] => bin7segdecoder:inst.bininput[2]
-SW[2] => LEDG[2].DATAIN
-SW[3] => bin7segdecoder:inst.bininput[3]
-SW[3] => LEDG[3].DATAIN
-LEDG[0] <= SW[0].DB_MAX_OUTPUT_PORT_TYPE
-LEDG[1] <= SW[1].DB_MAX_OUTPUT_PORT_TYPE
-LEDG[2] <= SW[2].DB_MAX_OUTPUT_PORT_TYPE
-LEDG[3] <= SW[3].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[0] <= bin7segdecoder:inst.decout_n[0]
-LEDR[1] <= bin7segdecoder:inst.decout_n[1]
-LEDR[2] <= bin7segdecoder:inst.decout_n[2]
-LEDR[3] <= bin7segdecoder:inst.decout_n[3]
-LEDR[4] <= bin7segdecoder:inst.decout_n[4]
-LEDR[5] <= bin7segdecoder:inst.decout_n[5]
-LEDR[6] <= bin7segdecoder:inst.decout_n[6]
+|DisplayDemoVHDL
+sw[0] => bin7segdecoder:system_core.bininput[0]
+sw[0] => ledg[0].DATAIN
+sw[1] => bin7segdecoder:system_core.bininput[1]
+sw[1] => ledg[1].DATAIN
+sw[2] => bin7segdecoder:system_core.bininput[2]
+sw[2] => ledg[2].DATAIN
+sw[3] => bin7segdecoder:system_core.bininput[3]
+sw[3] => ledg[3].DATAIN
+key[0] => bin7segdecoder:system_core.enable
+hex0[0] << bin7segdecoder:system_core.decout_n[0]
+hex0[1] << bin7segdecoder:system_core.decout_n[1]
+hex0[2] << bin7segdecoder:system_core.decout_n[2]
+hex0[3] << bin7segdecoder:system_core.decout_n[3]
+hex0[4] << bin7segdecoder:system_core.decout_n[4]
+hex0[5] << bin7segdecoder:system_core.decout_n[5]
+hex0[6] << bin7segdecoder:system_core.decout_n[6]
+ledg[0] << sw[0].DB_MAX_OUTPUT_PORT_TYPE
+ledg[1] << sw[1].DB_MAX_OUTPUT_PORT_TYPE
+ledg[2] << sw[2].DB_MAX_OUTPUT_PORT_TYPE
+ledg[3] << sw[3].DB_MAX_OUTPUT_PORT_TYPE
+ledr[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
+ledr[1] << ledr[1].DB_MAX_OUTPUT_PORT_TYPE
+ledr[2] << ledr[2].DB_MAX_OUTPUT_PORT_TYPE
+ledr[3] << ledr[3].DB_MAX_OUTPUT_PORT_TYPE
+ledr[4] << ledr[4].DB_MAX_OUTPUT_PORT_TYPE
+ledr[5] << ledr[5].DB_MAX_OUTPUT_PORT_TYPE
+ledr[6] << ledr[6].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DisplayDemo|bin7segdecoder:inst
+|DisplayDemoVHDL|bin7segdecoder:system_core
 bininput[0] => Equal0.IN3
 bininput[0] => Equal1.IN0
 bininput[0] => Equal2.IN3
