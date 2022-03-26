@@ -1,7 +1,7 @@
 onerror {exit -code 1}
 vlib work
 vcom -work work DisplayDemo.vho
-vcom -work work DisplayDemoVHDLSim.vwf.vht
+vcom -work work VHDLSim.vwf.vht
 vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.DisplayDemoVHDL_vhd_vec_tst
 vcd file -direction DisplayDemo.msim.vcd
 vcd add -internal DisplayDemoVHDL_vhd_vec_tst/*

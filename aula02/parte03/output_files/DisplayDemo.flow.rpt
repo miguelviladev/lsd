@@ -1,5 +1,5 @@
 Flow report for DisplayDemo
-Sat Mar 26 18:23:56 2022
+Sat Mar 26 18:40:17 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Mar 26 18:23:56 2022       ;
+; Flow Status                        ; Successful - Sat Mar 26 18:40:17 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; DisplayDemo                                 ;
 ; Top-level Entity Name              ; displaydemovhdl                             ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/26/2022 18:23:51 ;
+; Start date & time ; 03/26/2022 18:36:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DisplayDemo         ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name     ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 137175987548783.164831903124376        ; --            ; --              ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 137175987548783.164831978124738        ; --            ; --              ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --              ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --              ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --              ; eda_board_design_signal_integrity ;
@@ -104,8 +104,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 924 MB              ; 00:00:12                           ;
-; Total                ; 00:00:05     ; --                      ; --                  ; 00:00:12                           ;
+; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 934 MB              ; 00:00:12                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1025 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1025 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1033 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1025 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1030 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1025 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1029 MB             ; 00:00:00                           ;
+; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:12                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,6 +122,13 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
 +----------------------+------------------+----------------+------------+----------------+
 ; Analysis & Synthesis ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
@@ -122,6 +136,13 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off DisplayDemo -c DisplayDemo
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off DisplayDemo -c DisplayDemo --vector_source=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/Waveform.vwf --testbench_file=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/simulation/qsim/Waveform.vwf.vht
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off DisplayDemo -c DisplayDemo --vector_source=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/VHDLSim.vwf --testbench_file=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/simulation/qsim/VHDLSim.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/simulation/qsim/ DisplayDemo -c DisplayDemo
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off DisplayDemo -c DisplayDemo --vector_source=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/VHDLSim.vwf --testbench_file=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/simulation/qsim/VHDLSim.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/simulation/qsim/ DisplayDemo -c DisplayDemo
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off DisplayDemo -c DisplayDemo --vector_source=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/VHDLSim.vwf --testbench_file=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/simulation/qsim/VHDLSim.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/simulation/qsim/ DisplayDemo -c DisplayDemo
 
 
 

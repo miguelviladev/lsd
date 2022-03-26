@@ -7,7 +7,6 @@ source_file = 1, /opt/intelFPGA_lite/19.1/quartus/libraries/vhdl/ieee/prmtvs_p.v
 source_file = 1, /opt/intelFPGA_lite/19.1/quartus/libraries/vhdl/ieee/timing_b.vhd
 source_file = 1, /opt/intelFPGA_lite/19.1/quartus/libraries/vhdl/ieee/timing_p.vhd
 source_file = 1, /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula02/parte03/db/DisplayDemo.cbx.xml
-design_name = hard_block
 design_name = displaydemovhdl
 instance = comp, \hex0[0]~output\, hex0[0]~output, displaydemovhdl, 1
 instance = comp, \hex0[1]~output\, hex0[1]~output, displaydemovhdl, 1
