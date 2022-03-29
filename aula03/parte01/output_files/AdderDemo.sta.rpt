@@ -1,5 +1,5 @@
 Timing Analyzer report for AdderDemo
-Tue Mar 29 15:12:16 2022
+Tue Mar 29 15:27:34 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -274,15 +274,15 @@ No synchronizer chains to report.
 +-------------------------+--------------+-----------------+-----------------+
 ; SW[9]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[8]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[13]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; KEY[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[13]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[17]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[12]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[16]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[14]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[10]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[15]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[11]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[15]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[10]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[14]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[3]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[7]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[2]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -451,9 +451,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 17    ; 17   ;
-; Unconstrained Input Port Paths  ; 60    ; 60   ;
+; Unconstrained Input Port Paths  ; 61    ; 61   ;
 ; Unconstrained Output Ports      ; 10    ; 10   ;
-; Unconstrained Output Port Paths ; 60    ; 60   ;
+; Unconstrained Output Port Paths ; 61    ; 61   ;
 +---------------------------------+-------+------+
 
 
@@ -549,7 +549,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Mar 29 15:12:15 2022
+    Info: Processing started: Tue Mar 29 15:27:33 2022
 Info: Command: quartus_sta AdderDemo -c AdderDemo
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -597,8 +597,8 @@ Info (332140): No Minimum Pulse Width paths to report
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 858 megabytes
-    Info: Processing ended: Tue Mar 29 15:12:16 2022
+    Info: Peak virtual memory: 859 megabytes
+    Info: Processing ended: Tue Mar 29 15:27:34 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
