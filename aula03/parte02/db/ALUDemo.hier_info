@@ -1,4 +1,43 @@
-|ALU4
+|ALUDemo
+LEDR[0] <= alu4:inst.r[0]
+LEDR[1] <= alu4:inst.r[1]
+LEDR[2] <= alu4:inst.r[2]
+LEDR[3] <= alu4:inst.r[3]
+LEDR[4] <= alu4:inst.m[0]
+LEDR[5] <= alu4:inst.m[1]
+LEDR[6] <= alu4:inst.m[2]
+LEDR[7] <= alu4:inst.m[3]
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+LEDR[10] <= <GND>
+LEDR[11] <= <GND>
+LEDR[12] <= <GND>
+LEDR[13] <= <GND>
+LEDR[14] <= <GND>
+LEDR[15] <= <GND>
+LEDR[16] <= <GND>
+LEDR[17] <= <GND>
+SW[0] => alu4:inst.b[0]
+SW[1] => alu4:inst.b[1]
+SW[2] => alu4:inst.b[2]
+SW[3] => alu4:inst.b[3]
+SW[4] => alu4:inst.a[0]
+SW[5] => alu4:inst.a[1]
+SW[6] => alu4:inst.a[2]
+SW[7] => alu4:inst.a[3]
+SW[8] => alu4:inst.op[0]
+SW[9] => alu4:inst.op[1]
+SW[10] => alu4:inst.op[2]
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ~NO_FANOUT~
+SW[15] => ~NO_FANOUT~
+SW[16] => ~NO_FANOUT~
+SW[17] => ~NO_FANOUT~
+
+
+|ALUDemo|alu4:inst
 a[0] => Mult0.IN3
 a[0] => Add0.IN4
 a[0] => Add1.IN8
