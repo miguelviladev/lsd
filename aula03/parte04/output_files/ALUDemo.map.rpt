@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALUDemo
-Wed Mar 30 13:10:07 2022
+Wed Mar 30 13:24:36 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -14,9 +14,14 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for Inferred Entity Instance: alu4:inst|lpm_divide:Mod0
+ 11. Parameter Settings for Inferred Entity Instance: alu4:inst|lpm_mult:Mult0
+ 12. Parameter Settings for Inferred Entity Instance: alu4:inst|lpm_divide:Div0
+ 13. lpm_mult Parameter Settings by Entity Instance
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +48,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 30 13:10:07 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 30 13:24:36 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; ALUDemo                                     ;
-; Top-level Entity Name              ; bin2bcd                                     ;
+; Top-level Entity Name              ; ALUDemo                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4                                           ;
-;     Total combinational functions  ; 4                                           ;
+; Total logic elements               ; 105                                         ;
+;     Total combinational functions  ; 105                                         ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 12                                          ;
+; Total pins                         ; 50                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -66,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; Bin2BCD            ; ALUDemo            ;
+; Top-level entity name                                            ; ALUDemo            ; ALUDemo            ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -162,54 +167,86 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                         ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
-; Bin2BCD.vhd                      ; yes             ; User VHDL File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/Bin2BCD.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; ALU4.vhd                         ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALU4.vhd                   ;         ;
+; ALUDemo.bdf                      ; yes             ; User Block Diagram/Schematic File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALUDemo.bdf                ;         ;
+; Bin7SegDecoder.vhd               ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/Bin7SegDecoder.vhd         ;         ;
+; Bin2BCD.vhd                      ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/Bin2BCD.vhd                ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; /opt/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_divide.tdf                             ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; /opt/intelFPGA_lite/19.1/quartus/libraries/megafunctions/abs_divider.inc                            ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; /opt/intelFPGA_lite/19.1/quartus/libraries/megafunctions/sign_div_unsign.inc                        ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                       ; /opt/intelFPGA_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                             ;         ;
+; db/lpm_divide_i9m.tdf            ; yes             ; Auto-Generated Megafunction        ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/lpm_divide_i9m.tdf      ;         ;
+; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction        ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/sign_div_unsign_7kh.tdf ;         ;
+; db/alt_u_div_24f.tdf             ; yes             ; Auto-Generated Megafunction        ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/alt_u_div_24f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/add_sub_8pc.tdf         ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; /opt/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_mult.tdf                               ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; /opt/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_add_sub.inc                            ;         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; /opt/intelFPGA_lite/19.1/quartus/libraries/megafunctions/multcore.inc                               ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; /opt/intelFPGA_lite/19.1/quartus/libraries/megafunctions/bypassff.inc                               ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; /opt/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altshift.inc                               ;         ;
+; db/mult_j8t.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/mult_j8t.tdf            ;         ;
+; db/lpm_divide_fhm.tdf            ; yes             ; Auto-Generated Megafunction        ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/lpm_divide_fhm.tdf      ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                   ;
-+---------------------------------------------+-----------------+
-; Resource                                    ; Usage           ;
-+---------------------------------------------+-----------------+
-; Estimated Total logic elements              ; 4               ;
-;                                             ;                 ;
-; Total combinational functions               ; 4               ;
-; Logic element usage by number of LUT inputs ;                 ;
-;     -- 4 input functions                    ; 0               ;
-;     -- 3 input functions                    ; 4               ;
-;     -- <=2 input functions                  ; 0               ;
-;                                             ;                 ;
-; Logic elements by mode                      ;                 ;
-;     -- normal mode                          ; 4               ;
-;     -- arithmetic mode                      ; 0               ;
-;                                             ;                 ;
-; Total registers                             ; 0               ;
-;     -- Dedicated logic registers            ; 0               ;
-;     -- I/O registers                        ; 0               ;
-;                                             ;                 ;
-; I/O pins                                    ; 12              ;
-;                                             ;                 ;
-; Embedded Multiplier 9-bit elements          ; 0               ;
-;                                             ;                 ;
-; Maximum fan-out node                        ; inport[3]~input ;
-; Maximum fan-out                             ; 4               ;
-; Total fan-out                               ; 29              ;
-; Average fan-out                             ; 1.04            ;
-+---------------------------------------------+-----------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 105         ;
+;                                             ;             ;
+; Total combinational functions               ; 105         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 49          ;
+;     -- 3 input functions                    ; 38          ;
+;     -- <=2 input functions                  ; 18          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 75          ;
+;     -- arithmetic mode                      ; 30          ;
+;                                             ;             ;
+; Total registers                             ; 0           ;
+;     -- Dedicated logic registers            ; 0           ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 50          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; SW[1]~input ;
+; Maximum fan-out                             ; 26          ;
+; Total fan-out                               ; 407         ;
+; Average fan-out                             ; 1.99        ;
++---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |bin2bcd                   ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |bin2bcd            ; bin2bcd     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                            ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |ALUDemo                                  ; 105 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 50   ; 0            ; |ALUDemo                                                                                                           ; ALUDemo             ; work         ;
+;    |alu4:inst|                            ; 97 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst                                                                                                 ; alu4                ; work         ;
+;       |lpm_divide:Div0|                   ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_fhm:auto_generated|  ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst|lpm_divide:Div0|lpm_divide_fhm:auto_generated                                                   ; lpm_divide_fhm      ; work         ;
+;             |sign_div_unsign_7kh:divider| ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                |alt_u_div_24f:divider|    ; 13 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst|lpm_divide:Div0|lpm_divide_fhm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
+;       |lpm_divide:Mod0|                   ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_i9m:auto_generated|  ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m      ; work         ;
+;             |sign_div_unsign_7kh:divider| ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                |alt_u_div_24f:divider|    ; 22 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
+;       |lpm_mult:Mult0|                    ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst|lpm_mult:Mult0                                                                                  ; lpm_mult            ; work         ;
+;          |mult_j8t:auto_generated|        ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|alu4:inst|lpm_mult:Mult0|mult_j8t:auto_generated                                                          ; mult_j8t            ; work         ;
+;    |bin2bcd:inst4|                        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|bin2bcd:inst4                                                                                             ; bin2bcd             ; work         ;
+;    |bin7segdecoder:inst1|                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALUDemo|bin7segdecoder:inst1                                                                                      ; bin7segdecoder      ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -228,19 +265,137 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |ALUDemo|alu4:inst|Mux2           ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |ALUDemo|bin2bcd:inst4|outport[2] ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; No         ; |ALUDemo|bin2bcd:inst4|outport[4] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: alu4:inst|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------+
+; Parameter Name         ; Value          ; Type                             ;
++------------------------+----------------+----------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                          ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                   ;
++------------------------+----------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: alu4:inst|lpm_mult:Mult0           ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 4            ; Untyped             ;
+; LPM_WIDTHB                                     ; 4            ; Untyped             ;
+; LPM_WIDTHP                                     ; 8            ; Untyped             ;
+; LPM_WIDTHR                                     ; 8            ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_j8t     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: alu4:inst|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------+
+; Parameter Name         ; Value          ; Type                             ;
++------------------------+----------------+----------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                          ;
+; CBXI_PARAMETER         ; lpm_divide_fhm ; Untyped                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                   ;
++------------------------+----------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                   ;
++---------------------------------------+--------------------------+
+; Name                                  ; Value                    ;
++---------------------------------------+--------------------------+
+; Number of entity instances            ; 1                        ;
+; Entity Instance                       ; alu4:inst|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 4                        ;
+;     -- LPM_WIDTHB                     ; 4                        ;
+;     -- LPM_WIDTHP                     ; 8                        ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                 ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                       ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                       ;
+;     -- USE_EAB                        ; OFF                      ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                     ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                       ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                       ;
++---------------------------------------+--------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 12                          ;
-; cycloneiii_lcell_comb ; 5                           ;
-;     normal            ; 5                           ;
-;         0 data inputs ; 1                           ;
-;         3 data inputs ; 4                           ;
+; boundary_port         ; 50                          ;
+; cycloneiii_lcell_comb ; 109                         ;
+;     arith             ; 30                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 27                          ;
+;     normal            ; 79                          ;
+;         0 data inputs ; 6                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 11                          ;
+;         4 data inputs ; 49                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.78                        ;
+; Max LUT depth         ; 11.50                       ;
+; Average LUT depth     ; 7.83                        ;
 +-----------------------+-----------------------------+
 
 
@@ -249,7 +404,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -259,7 +414,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Mar 30 13:09:57 2022
+    Info: Processing started: Wed Mar 30 13:24:26 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALUDemo -c ALUDemo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -274,22 +429,90 @@ Info (12021): Found 2 design units, including 1 entities, in source file Bin7Seg
 Info (12021): Found 2 design units, including 1 entities, in source file Bin2BCD.vhd
     Info (12022): Found design unit 1: bin2bcd-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/Bin2BCD.vhd Line: 9
     Info (12023): Found entity 1: bin2bcd File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/Bin2BCD.vhd Line: 4
-Info (12127): Elaborating entity "Bin2BCD" for the top level hierarchy
+Info (12127): Elaborating entity "ALUDemo" for the top level hierarchy
+Info (12128): Elaborating entity "bin7segdecoder" for hierarchy "bin7segdecoder:inst1"
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:inst4"
+Info (12128): Elaborating entity "alu4" for hierarchy "alu4:inst"
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "alu4:inst|Mod0" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALU4.vhd Line: 25
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "alu4:inst|Mult0" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALU4.vhd Line: 18
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "alu4:inst|Div0" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALU4.vhd Line: 24
+Info (12130): Elaborated megafunction instantiation "alu4:inst|lpm_divide:Mod0" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALU4.vhd Line: 25
+Info (12133): Instantiated megafunction "alu4:inst|lpm_divide:Mod0" with the following parameter: File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALU4.vhd Line: 25
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_i9m.tdf
+    Info (12023): Found entity 1: lpm_divide_i9m File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/lpm_divide_i9m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7kh File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/sign_div_unsign_7kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_24f.tdf
+    Info (12023): Found entity 1: alt_u_div_24f File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/alt_u_div_24f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "alu4:inst|lpm_mult:Mult0" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALU4.vhd Line: 18
+Info (12133): Instantiated megafunction "alu4:inst|lpm_mult:Mult0" with the following parameter: File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALU4.vhd Line: 18
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "4"
+    Info (12134): Parameter "LPM_WIDTHP" = "8"
+    Info (12134): Parameter "LPM_WIDTHR" = "8"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_j8t.tdf
+    Info (12023): Found entity 1: mult_j8t File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/mult_j8t.tdf Line: 29
+Info (12130): Elaborated megafunction instantiation "alu4:inst|lpm_divide:Div0" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALU4.vhd Line: 24
+Info (12133): Instantiated megafunction "alu4:inst|lpm_divide:Div0" with the following parameter: File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/ALU4.vhd Line: 24
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fhm.tdf
+    Info (12023): Found entity 1: lpm_divide_fhm File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/lpm_divide_fhm.tdf Line: 25
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "alu4:inst|lpm_mult:Mult0|mult_j8t:auto_generated|le5a[4]" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/db/mult_j8t.tdf Line: 43
+Info (13014): Ignored 48 buffer(s)
+    Info (13016): Ignored 4 CARRY_SUM buffer(s)
+    Info (13019): Ignored 44 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "outport[5]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/Bin2BCD.vhd Line: 6
-    Warning (13410): Pin "outport[6]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/Bin2BCD.vhd Line: 6
-    Warning (13410): Pin "outport[7]" is stuck at GND File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/Bin2BCD.vhd Line: 6
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC
+    Warning (13410): Pin "HEX1[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[17]" is stuck at GND
+    Warning (13410): Pin "LEDR[16]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 16 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 920 megabytes
-    Info: Processing ended: Wed Mar 30 13:10:07 2022
+Warning (21074): Design contains 7 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[17]"
+    Warning (15610): No output dependent on input pin "SW[16]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+Info (21057): Implemented 155 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 105 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 948 megabytes
+    Info: Processing ended: Wed Mar 30 13:24:36 2022
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Total CPU time (on all processors): 00:00:22
 
 
