@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "03/30/2022 12:45:01"
+-- Generated on "03/30/2022 13:11:15"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          bin2bcd
 -- 
@@ -35,11 +35,11 @@ ARCHITECTURE bin2bcd_arch OF bin2bcd_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL inport : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL outport : STD_LOGIC_VECTOR(4 DOWNTO 0);
+SIGNAL outport : STD_LOGIC_VECTOR(7 DOWNTO 0);
 COMPONENT bin2bcd
 	PORT (
 	inport : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	outport : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
+	outport : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN

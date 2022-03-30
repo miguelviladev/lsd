@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition"
 
--- DATE "03/30/2022 12:45:02"
+-- DATE "03/30/2022 13:11:16"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -35,7 +35,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	bin2bcd IS
     PORT (
 	inport : IN std_logic_vector(3 DOWNTO 0);
-	outport : OUT std_logic_vector(4 DOWNTO 0)
+	outport : OUT std_logic_vector(7 DOWNTO 0)
 	);
 END bin2bcd;
 
@@ -50,12 +50,15 @@ SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_inport : std_logic_vector(3 DOWNTO 0);
-SIGNAL ww_outport : std_logic_vector(4 DOWNTO 0);
+SIGNAL ww_outport : std_logic_vector(7 DOWNTO 0);
 SIGNAL \outport[0]~output_o\ : std_logic;
 SIGNAL \outport[1]~output_o\ : std_logic;
 SIGNAL \outport[2]~output_o\ : std_logic;
 SIGNAL \outport[3]~output_o\ : std_logic;
 SIGNAL \outport[4]~output_o\ : std_logic;
+SIGNAL \outport[5]~output_o\ : std_logic;
+SIGNAL \outport[6]~output_o\ : std_logic;
+SIGNAL \outport[7]~output_o\ : std_logic;
 SIGNAL \inport[0]~input_o\ : std_logic;
 SIGNAL \inport[3]~input_o\ : std_logic;
 SIGNAL \inport[2]~input_o\ : std_logic;
@@ -127,6 +130,39 @@ PORT MAP (
 	i => \outport~18_combout\,
 	devoe => ww_devoe,
 	o => \outport[4]~output_o\);
+
+\outport[5]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \outport[5]~output_o\);
+
+\outport[6]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \outport[6]~output_o\);
+
+\outport[7]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \outport[7]~output_o\);
 
 \inport[0]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
@@ -237,6 +273,12 @@ ww_outport(2) <= \outport[2]~output_o\;
 ww_outport(3) <= \outport[3]~output_o\;
 
 ww_outport(4) <= \outport[4]~output_o\;
+
+ww_outport(5) <= \outport[5]~output_o\;
+
+ww_outport(6) <= \outport[6]~output_o\;
+
+ww_outport(7) <= \outport[7]~output_o\;
 END structure;
 
 

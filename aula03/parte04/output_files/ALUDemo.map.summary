@@ -1,4 +1,4 @@
-Analysis & Synthesis Status : Successful - Wed Mar 30 12:42:41 2022
+Analysis & Synthesis Status : Successful - Wed Mar 30 13:10:07 2022
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : ALUDemo
 Top-level Entity Name : bin2bcd
@@ -7,7 +7,7 @@ Total logic elements : 4
     Total combinational functions : 4
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 9
+Total pins : 12
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -1,48 +1,3 @@
-/*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALUDemo -c ALUDemo --vector_source="/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/Bin2BCDSim.vwf" --testbench_file="/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/simulation/qsim/Bin2BCDSim.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALUDemo -c ALUDemo --vector_source="/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/Bin2BCDSim.vwf" --testbench_file="/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/simulation/qsim/Bin2BCDSim.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/simulation/qsim/" ALUDemo -c ALUDemo</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula03/parte04/simulation/qsim/" ALUDemo -c ALUDemo</tnetlist_cmd>
-<modelsim_script>onerror {exit -code 1}
-vlib work
-vcom -work work ALUDemo.vho
-vcom -work work Bin2BCDSim.vwf.vht
-vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Bin2BCD_vhd_vec_tst
-vcd file -direction ALUDemo.msim.vcd
-vcd add -internal Bin2BCD_vhd_vec_tst/*
-vcd add -internal Bin2BCD_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-
-</modelsim_script>
-<modelsim_script_timing>onerror {exit -code 1}
-vlib work
-vcom -work work ALUDemo.vho
-vcom -work work Bin2BCDSim.vwf.vht
-vsim -novopt -c -t 1ps -sdfmax Bin2BCD_vhd_vec_tst/i1=ALUDemo_vhd.sdo -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Bin2BCD_vhd_vec_tst
-vcd file -direction ALUDemo.msim.vcd
-vcd add -internal Bin2BCD_vhd_vec_tst/*
-vcd add -internal Bin2BCD_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-
-</modelsim_script_timing>
-<hdl_lang>vhdl</hdl_lang>
-</simulation_settings>*/
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -225,11 +180,13 @@ TRANSITION_LIST("inport[3]")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 2;
+			REPEAT = 1;
 			LEVEL 0 FOR 240.0;
 			LEVEL 1 FOR 240.0;
+			LEVEL 0 FOR 240.0;
+			LEVEL 1 FOR 240.0;
+			LEVEL 0 FOR 40.0;
 		}
-		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -240,11 +197,17 @@ TRANSITION_LIST("inport[2]")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 4;
+			REPEAT = 1;
 			LEVEL 0 FOR 120.0;
 			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 40.0;
 		}
-		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -255,11 +218,25 @@ TRANSITION_LIST("inport[1]")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 8;
+			REPEAT = 1;
 			LEVEL 0 FOR 60.0;
 			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 40.0;
 		}
-		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -270,12 +247,42 @@ TRANSITION_LIST("inport[0]")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 16;
+			REPEAT = 1;
 			LEVEL 0 FOR 30.0;
 			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 10.0;
 		}
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 10.0;
 	}
 }
 
@@ -284,7 +291,11 @@ TRANSITION_LIST("outport[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -293,7 +304,11 @@ TRANSITION_LIST("outport[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -302,7 +317,11 @@ TRANSITION_LIST("outport[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
 	}
 }
 
@@ -311,7 +330,15 @@ TRANSITION_LIST("outport[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 300.0;
+			LEVEL 1 FOR 180.0;
+			LEVEL 0 FOR 300.0;
+			LEVEL 1 FOR 180.0;
+			LEVEL 0 FOR 40.0;
+		}
 	}
 }
 
@@ -320,7 +347,15 @@ TRANSITION_LIST("outport[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 240.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 420.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 220.0;
+		}
 	}
 }
 
@@ -329,7 +364,19 @@ TRANSITION_LIST("outport[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 180.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 120.0;
+			LEVEL 0 FOR 180.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 40.0;
+		}
 	}
 }
 
@@ -338,7 +385,23 @@ TRANSITION_LIST("outport[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 100.0;
+		}
 	}
 }
 
@@ -347,7 +410,44 @@ TRANSITION_LIST("outport[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 10.0;
+		}
 	}
 }
 
