@@ -1,5 +1,5 @@
 Flow report for ALUDemo
-Wed Mar 30 13:37:32 2022
+Thu Mar 31 11:28:55 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Mar 30 13:37:32 2022       ;
+; Flow Status                        ; Successful - Thu Mar 31 11:28:55 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; ALUDemo                                     ;
 ; Top-level Entity Name              ; ALUDemo                                     ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 122 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 122 / 114,480 ( < 1 % )                     ;
+; Total logic elements               ; 393 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 393 / 114,480 ( < 1 % )                     ;
 ;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 64 / 529 ( 12 % )                           ;
+; Total pins                         ; 57 / 529 ( 11 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/30/2022 13:37:04 ;
+; Start date & time ; 03/31/2022 11:28:27 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ALUDemo             ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 115052579713273.164864382407518        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 115052579713273.164872250707362        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -99,12 +99,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 948 MB              ; 00:00:21                           ;
-; Fitter               ; 00:00:11     ; 1.0                     ; 1418 MB             ; 00:00:13                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 805 MB              ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 863 MB              ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1029 MB             ; 00:00:00                           ;
-; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:39                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 953 MB              ; 00:00:21                           ;
+; Fitter               ; 00:00:10     ; 1.0                     ; 1414 MB             ; 00:00:14                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 810 MB              ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 859 MB              ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1028 MB             ; 00:00:00                           ;
+; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:40                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

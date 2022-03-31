@@ -1,7 +1,7 @@
 # do ALUDemo.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:11:17 on Mar 30,2022
+# Start time: 11:18:14 on Mar 31,2022
 # vcom -work work ALUDemo.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -12,20 +12,20 @@
 # -- Loading package cycloneive_components
 # -- Compiling entity bin2bcd
 # -- Compiling architecture structure of bin2bcd
-# End time: 13:11:17 on Mar 30,2022, Elapsed time: 0:00:00
+# End time: 11:18:14 on Mar 31,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:11:17 on Mar 30,2022
+# Start time: 11:18:14 on Mar 31,2022
 # vcom -work work Bin2BCDSim.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity bin2bcd_vhd_vec_tst
 # -- Compiling architecture bin2bcd_arch of bin2bcd_vhd_vec_tst
-# End time: 13:11:17 on Mar 30,2022, Elapsed time: 0:00:00
+# End time: 11:18:14 on Mar 31,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Bin2BCD_vhd_vec_tst 
-# Start time: 13:11:17 on Mar 30,2022
+# Start time: 11:18:14 on Mar 31,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -39,6 +39,8 @@
 # Loading cycloneive.cycloneive_io_obuf(arch)
 # Loading cycloneive.cycloneive_io_ibuf(arch)
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
+# ** Warning: Design size of 25419 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
 # after#31
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
@@ -48,5 +50,5 @@
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
-# End time: 13:11:17 on Mar 30,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 8
+# End time: 11:18:15 on Mar 31,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 9

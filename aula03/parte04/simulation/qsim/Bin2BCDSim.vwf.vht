@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "03/30/2022 13:11:15"
+-- Generated on "03/31/2022 11:18:12"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          bin2bcd
 -- 
@@ -34,73 +34,84 @@ END bin2bcd_vhd_vec_tst;
 ARCHITECTURE bin2bcd_arch OF bin2bcd_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL inport : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL outport : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL binout0 : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL binout1 : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL binout2 : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL minport : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL rinport : STD_LOGIC_VECTOR(3 DOWNTO 0);
 COMPONENT bin2bcd
 	PORT (
-	inport : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	outport : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	binout0 : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	binout1 : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	binout2 : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	minport : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+	rinport : IN STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
 	i1 : bin2bcd
 	PORT MAP (
 -- list connections between master ports and signals
-	inport => inport,
-	outport => outport
+	binout0 => binout0,
+	binout1 => binout1,
+	binout2 => binout2,
+	minport => minport,
+	rinport => rinport
 	);
--- inport[3]
-t_prcs_inport_3: PROCESS
+-- minport[3]
+t_prcs_minport_3: PROCESS
 BEGIN
-	FOR i IN 1 TO 2
-	LOOP
-		inport(3) <= '0';
-		WAIT FOR 240000 ps;
-		inport(3) <= '1';
-		WAIT FOR 240000 ps;
-	END LOOP;
-	inport(3) <= '0';
+	minport(3) <= '1';
+	WAIT FOR 320000 ps;
+	minport(3) <= '0';
 WAIT;
-END PROCESS t_prcs_inport_3;
--- inport[2]
-t_prcs_inport_2: PROCESS
+END PROCESS t_prcs_minport_3;
+-- minport[2]
+t_prcs_minport_2: PROCESS
 BEGIN
-	FOR i IN 1 TO 4
-	LOOP
-		inport(2) <= '0';
-		WAIT FOR 120000 ps;
-		inport(2) <= '1';
-		WAIT FOR 120000 ps;
-	END LOOP;
-	inport(2) <= '0';
+	minport(2) <= '1';
+	WAIT FOR 320000 ps;
+	minport(2) <= '0';
 WAIT;
-END PROCESS t_prcs_inport_2;
--- inport[1]
-t_prcs_inport_1: PROCESS
+END PROCESS t_prcs_minport_2;
+-- minport[1]
+t_prcs_minport_1: PROCESS
 BEGIN
-	FOR i IN 1 TO 8
-	LOOP
-		inport(1) <= '0';
-		WAIT FOR 60000 ps;
-		inport(1) <= '1';
-		WAIT FOR 60000 ps;
-	END LOOP;
-	inport(1) <= '0';
+	minport(1) <= '1';
+	WAIT FOR 320000 ps;
+	minport(1) <= '0';
 WAIT;
-END PROCESS t_prcs_inport_1;
--- inport[0]
-t_prcs_inport_0: PROCESS
+END PROCESS t_prcs_minport_1;
+-- minport[0]
+t_prcs_minport_0: PROCESS
 BEGIN
-	FOR i IN 1 TO 16
-	LOOP
-		inport(0) <= '0';
-		WAIT FOR 30000 ps;
-		inport(0) <= '1';
-		WAIT FOR 30000 ps;
-	END LOOP;
-	inport(0) <= '0';
-	WAIT FOR 30000 ps;
-	inport(0) <= '1';
+	minport(0) <= '0';
 WAIT;
-END PROCESS t_prcs_inport_0;
+END PROCESS t_prcs_minport_0;
+-- rinport[3]
+t_prcs_rinport_3: PROCESS
+BEGIN
+	rinport(3) <= '0';
+WAIT;
+END PROCESS t_prcs_rinport_3;
+-- rinport[2]
+t_prcs_rinport_2: PROCESS
+BEGIN
+	rinport(2) <= '0';
+WAIT;
+END PROCESS t_prcs_rinport_2;
+-- rinport[1]
+t_prcs_rinport_1: PROCESS
+BEGIN
+	rinport(1) <= '0';
+WAIT;
+END PROCESS t_prcs_rinport_1;
+-- rinport[0]
+t_prcs_rinport_0: PROCESS
+BEGIN
+	rinport(0) <= '1';
+	WAIT FOR 200000 ps;
+	rinport(0) <= '0';
+WAIT;
+END PROCESS t_prcs_rinport_0;
 END bin2bcd_arch;
