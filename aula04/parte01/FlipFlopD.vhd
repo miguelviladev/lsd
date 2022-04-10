@@ -22,3 +22,17 @@ begin
 		end if;
 	end process;
 end behavioral;
+
+architecture asyncbehavioral of flipflopd is
+begin
+	process(clk, reset, set)
+	begin
+		if (reset = '1') then
+			q <= '0';
+		elsif (set = '1') then
+			q <= d;
+		elsif (rising_edge(clk)) then
+			q <= d;
+		end if;
+	end process;
+end asyncbehavioral;
