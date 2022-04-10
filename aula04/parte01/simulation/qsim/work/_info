@@ -83,7 +83,7 @@ R18
 Aflipflopd_arch
 R7
 R8
-Z24 DEx4 work 21 flipflopd_vhd_vec_tst 0 22 EKnG1YM2ZWP^U;h6^kfbP3
+DEx4 work 21 flipflopd_vhd_vec_tst 0 22 EKnG1YM2ZWP^U;h6^kfbP3
 l51
 L34
 Vn:DbK5oU72gE_@9Z6INE[2
@@ -95,6 +95,92 @@ R13
 R14
 R22
 R23
+!i113 1
+R17
+R18
+Elatch1b
+Z24 w1649556792
+R4
+R2
+R6
+R7
+R8
+R3
+R0
+R10
+R11
+l0
+L35
+Vn3AXoGz0lNZ3<Z@LX9kYe0
+!s100 TS^XLFk=4I0fA=nR`m?XE1
+R12
+32
+Z25 !s110 1649556793
+!i10b 1
+Z26 !s108 1649556793.000000
+R15
+R16
+!i113 1
+R17
+R18
+Astructure
+R4
+R2
+R6
+R7
+R8
+R3
+DEx4 work 7 latch1b 0 22 n3AXoGz0lNZ3<Z@LX9kYe0
+l61
+L43
+VU_Qch:Jzkm3BI<n<0a6[O1
+!s100 `[QnFS?CDaH?]BUgdMm701
+R12
+32
+R25
+!i10b 1
+R26
+R15
+R16
+!i113 1
+R17
+R18
+Elatch1b_vhd_vec_tst
+Z27 w1649556791
+R7
+R8
+R0
+Z28 8Latch1BSim.vwf.vht
+Z29 FLatch1BSim.vwf.vht
+l0
+L32
+V9TA`[XSmo6SH5Vz@;DPg31
+!s100 =8da6_TnGKA2cA495z5TD0
+R12
+32
+R25
+!i10b 1
+R26
+Z30 !s90 -work|work|Latch1BSim.vwf.vht|
+Z31 !s107 Latch1BSim.vwf.vht|
+!i113 1
+R17
+R18
+Alatch1b_arch
+R7
+R8
+Z32 DEx4 work 19 latch1b_vhd_vec_tst 0 22 9TA`[XSmo6SH5Vz@;DPg31
+l47
+L34
+Z33 VXW;:EARzYjHAXIC0zM@dN1
+Z34 !s100 Pb=:hlo5[Qal>nADdZVTX0
+R12
+32
+R25
+!i10b 1
+R26
+R30
+R31
 !i113 1
 R17
 R18

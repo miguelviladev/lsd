@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition"
 
--- DATE "04/10/2022 02:48:24"
+-- DATE "04/10/2022 03:13:12"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -27,24 +27,20 @@
 -- This VHDL file should be used for ModelSim-Altera (VHDL) only
 -- 
 
-LIBRARY ALTERA;
 LIBRARY CYCLONEIVE;
 LIBRARY IEEE;
-USE ALTERA.ALTERA_PRIMITIVES_COMPONENTS.ALL;
 USE CYCLONEIVE.CYCLONEIVE_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	flipflopd IS
+ENTITY 	latch1b IS
     PORT (
 	clk : IN std_logic;
-	reset : IN std_logic;
-	set : IN std_logic;
 	d : IN std_logic;
-	q : BUFFER std_logic
+	q : OUT std_logic
 	);
-END flipflopd;
+END latch1b;
 
-ARCHITECTURE structure OF flipflopd IS
+ARCHITECTURE structure OF latch1b IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -55,23 +51,16 @@ SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_clk : std_logic;
-SIGNAL ww_reset : std_logic;
-SIGNAL ww_set : std_logic;
 SIGNAL ww_d : std_logic;
 SIGNAL ww_q : std_logic;
 SIGNAL \q~output_o\ : std_logic;
-SIGNAL \clk~input_o\ : std_logic;
 SIGNAL \d~input_o\ : std_logic;
-SIGNAL \set~input_o\ : std_logic;
-SIGNAL \reset~input_o\ : std_logic;
-SIGNAL \q~0_combout\ : std_logic;
-SIGNAL \q~reg0_q\ : std_logic;
+SIGNAL \clk~input_o\ : std_logic;
+SIGNAL \q$latch~combout\ : std_logic;
 
 BEGIN
 
 ww_clk <= clk;
-ww_reset <= reset;
-ww_set <= set;
 ww_d <= d;
 q <= ww_q;
 ww_devoe <= devoe;
@@ -85,19 +74,9 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \q~reg0_q\,
+	i => \q$latch~combout\,
 	devoe => ww_devoe,
 	o => \q~output_o\);
-
-\clk~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_clk,
-	o => \clk~input_o\);
 
 \d~input\ : cycloneive_io_ibuf
 -- pragma translate_off
@@ -109,54 +88,30 @@ PORT MAP (
 	i => ww_d,
 	o => \d~input_o\);
 
-\set~input\ : cycloneive_io_ibuf
+\clk~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_set,
-	o => \set~input_o\);
+	i => ww_clk,
+	o => \clk~input_o\);
 
-\reset~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_reset,
-	o => \reset~input_o\);
-
-\q~0\ : cycloneive_lcell_comb
+\q$latch\ : cycloneive_lcell_comb
 -- Equation(s):
--- \q~0_combout\ = (!\reset~input_o\ & ((\set~input_o\ & (\d~input_o\)) # (!\set~input_o\ & ((\q~reg0_q\)))))
+-- \q$latch~combout\ = (\clk~input_o\ & (\d~input_o\)) # (!\clk~input_o\ & ((\q$latch~combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000010101100",
+	lut_mask => "1100110011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \d~input_o\,
-	datab => \q~reg0_q\,
-	datac => \set~input_o\,
-	datad => \reset~input_o\,
-	combout => \q~0_combout\);
-
-\q~reg0\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk~input_o\,
-	d => \q~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \q~reg0_q\);
+	datab => \d~input_o\,
+	datac => \q$latch~combout\,
+	datad => \clk~input_o\,
+	combout => \q$latch~combout\);
 
 ww_q <= \q~output_o\;
 END structure;
