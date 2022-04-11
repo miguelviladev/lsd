@@ -1,0 +1,106 @@
+|Counter_Demo
+HEX0[0] <= bin7segdecoder:inst2.decout_n[0]
+HEX0[1] <= bin7segdecoder:inst2.decout_n[1]
+HEX0[2] <= bin7segdecoder:inst2.decout_n[2]
+HEX0[3] <= bin7segdecoder:inst2.decout_n[3]
+HEX0[4] <= bin7segdecoder:inst2.decout_n[4]
+HEX0[5] <= bin7segdecoder:inst2.decout_n[5]
+HEX0[6] <= bin7segdecoder:inst2.decout_n[6]
+SW[0] => counterupdown4:inst.updow
+SW[1] => counterupdown4:inst.reset
+KEY[0] => counterupdown4:inst.clock
+LEDR[0] <= counterupdown4:inst.count[0]
+LEDR[1] <= counterupdown4:inst.count[1]
+LEDR[2] <= counterupdown4:inst.count[2]
+LEDR[3] <= counterupdown4:inst.count[3]
+
+
+|Counter_Demo|bin7segdecoder:inst2
+bininput[0] => Equal0.IN3
+bininput[0] => Equal1.IN0
+bininput[0] => Equal2.IN3
+bininput[0] => Equal3.IN1
+bininput[0] => Equal4.IN3
+bininput[0] => Equal5.IN1
+bininput[0] => Equal6.IN3
+bininput[0] => Equal7.IN2
+bininput[0] => Equal8.IN3
+bininput[0] => Equal9.IN1
+bininput[0] => Equal10.IN3
+bininput[0] => Equal11.IN2
+bininput[0] => Equal12.IN3
+bininput[0] => Equal13.IN2
+bininput[0] => Equal14.IN3
+bininput[1] => Equal0.IN2
+bininput[1] => Equal1.IN3
+bininput[1] => Equal2.IN0
+bininput[1] => Equal3.IN0
+bininput[1] => Equal4.IN2
+bininput[1] => Equal5.IN3
+bininput[1] => Equal6.IN1
+bininput[1] => Equal7.IN1
+bininput[1] => Equal8.IN2
+bininput[1] => Equal9.IN3
+bininput[1] => Equal10.IN1
+bininput[1] => Equal11.IN1
+bininput[1] => Equal12.IN2
+bininput[1] => Equal13.IN3
+bininput[1] => Equal14.IN2
+bininput[2] => Equal0.IN1
+bininput[2] => Equal1.IN2
+bininput[2] => Equal2.IN2
+bininput[2] => Equal3.IN3
+bininput[2] => Equal4.IN0
+bininput[2] => Equal5.IN0
+bininput[2] => Equal6.IN0
+bininput[2] => Equal7.IN0
+bininput[2] => Equal8.IN1
+bininput[2] => Equal9.IN2
+bininput[2] => Equal10.IN2
+bininput[2] => Equal11.IN3
+bininput[2] => Equal12.IN1
+bininput[2] => Equal13.IN1
+bininput[2] => Equal14.IN1
+bininput[3] => Equal0.IN0
+bininput[3] => Equal1.IN1
+bininput[3] => Equal2.IN1
+bininput[3] => Equal3.IN2
+bininput[3] => Equal4.IN1
+bininput[3] => Equal5.IN2
+bininput[3] => Equal6.IN2
+bininput[3] => Equal7.IN3
+bininput[3] => Equal8.IN0
+bininput[3] => Equal9.IN0
+bininput[3] => Equal10.IN0
+bininput[3] => Equal11.IN0
+bininput[3] => Equal12.IN0
+bininput[3] => Equal13.IN0
+bininput[3] => Equal14.IN0
+decout_n[0] <= decout_n.DB_MAX_OUTPUT_PORT_TYPE
+decout_n[1] <= decout_n.DB_MAX_OUTPUT_PORT_TYPE
+decout_n[2] <= decout_n.DB_MAX_OUTPUT_PORT_TYPE
+decout_n[3] <= decout_n.DB_MAX_OUTPUT_PORT_TYPE
+decout_n[4] <= decout_n.DB_MAX_OUTPUT_PORT_TYPE
+decout_n[5] <= decout_n.DB_MAX_OUTPUT_PORT_TYPE
+decout_n[6] <= decout_n.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_Demo|counterupdown4:inst
+reset => snum.OUTPUTSELECT
+reset => snum.OUTPUTSELECT
+reset => snum.OUTPUTSELECT
+reset => snum.OUTPUTSELECT
+updow => snum.OUTPUTSELECT
+updow => snum.OUTPUTSELECT
+updow => snum.OUTPUTSELECT
+updow => snum.OUTPUTSELECT
+clock => snum[0].CLK
+clock => snum[1].CLK
+clock => snum[2].CLK
+clock => snum[3].CLK
+count[0] <= snum[0].DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= snum[1].DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= snum[2].DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= snum[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
