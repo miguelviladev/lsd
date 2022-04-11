@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Counter_Demo
-Mon Apr 11 10:46:10 2022
+Mon Apr 11 11:17:06 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -45,16 +45,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 11 10:46:10 2022       ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 11 11:17:06 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; Counter_Demo                                ;
-; Top-level Entity Name              ; Counter_Demo                                ;
+; Top-level Entity Name              ; LoadCounter_Demo                            ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 81                                          ;
-;     Total combinational functions  ; 80                                          ;
+; Total logic elements               ; 83                                          ;
+;     Total combinational functions  ; 82                                          ;
 ;     Dedicated logic registers      ; 30                                          ;
 ; Total registers                    ; 30                                          ;
-; Total pins                         ; 15                                          ;
+; Total pins                         ; 21                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; Counter_Demo       ; Counter_Demo       ;
+; Top-level entity name                                            ; LoadCounter_Demo   ; Counter_Demo       ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -165,60 +165,60 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                ; Library ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
-; CounterUpDown4.vhd               ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/CounterUpDown4.vhd ;         ;
-; Bin7SegDecoder.vhd               ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/Bin7SegDecoder.vhd ;         ;
-; Counter_Demo.bdf                 ; yes             ; User Block Diagram/Schematic File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/Counter_Demo.bdf   ;         ;
-; DebounceUnit.vhd                 ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/DebounceUnit.vhd   ;         ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; Bin7SegDecoder.vhd               ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/Bin7SegDecoder.vhd     ;         ;
+; DebounceUnit.vhd                 ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/DebounceUnit.vhd       ;         ;
+; CounterLoadUpDown4.vhd           ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/CounterLoadUpDown4.vhd ;         ;
+; LoadCounter_Demo.bdf             ; yes             ; User Block Diagram/Schematic File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/LoadCounter_Demo.bdf   ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                    ;
-+---------------------------------------------+----------------------------------+
-; Resource                                    ; Usage                            ;
-+---------------------------------------------+----------------------------------+
-; Estimated Total logic elements              ; 81                               ;
-;                                             ;                                  ;
-; Total combinational functions               ; 80                               ;
-; Logic element usage by number of LUT inputs ;                                  ;
-;     -- 4 input functions                    ; 30                               ;
-;     -- 3 input functions                    ; 22                               ;
-;     -- <=2 input functions                  ; 28                               ;
-;                                             ;                                  ;
-; Logic elements by mode                      ;                                  ;
-;     -- normal mode                          ; 55                               ;
-;     -- arithmetic mode                      ; 25                               ;
-;                                             ;                                  ;
-; Total registers                             ; 30                               ;
-;     -- Dedicated logic registers            ; 30                               ;
-;     -- I/O registers                        ; 0                                ;
-;                                             ;                                  ;
-; I/O pins                                    ; 15                               ;
-;                                             ;                                  ;
-; Embedded Multiplier 9-bit elements          ; 0                                ;
-;                                             ;                                  ;
-; Maximum fan-out node                        ; debounceunit:inst24|s_previousin ;
-; Maximum fan-out                             ; 26                               ;
-; Total fan-out                               ; 347                              ;
-; Average fan-out                             ; 2.48                             ;
-+---------------------------------------------+----------------------------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 83             ;
+;                                             ;                ;
+; Total combinational functions               ; 82             ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 31             ;
+;     -- 3 input functions                    ; 10             ;
+;     -- <=2 input functions                  ; 41             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 57             ;
+;     -- arithmetic mode                      ; 25             ;
+;                                             ;                ;
+; Total registers                             ; 30             ;
+;     -- Dedicated logic registers            ; 30             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 21             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 26             ;
+; Total fan-out                               ; 356            ;
+; Average fan-out                             ; 2.31           ;
++---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                        ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name    ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+----------------+--------------+
-; |Counter_Demo              ; 80 (0)              ; 30 (0)                    ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |Counter_Demo                      ; Counter_Demo   ; work         ;
-;    |bin7segdecoder:inst2|  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Counter_Demo|bin7segdecoder:inst2 ; bin7segdecoder ; work         ;
-;    |counterupdown4:inst|   ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Counter_Demo|counterupdown4:inst  ; counterupdown4 ; work         ;
-;    |debounceunit:inst24|   ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Counter_Demo|debounceunit:inst24  ; debounceunit   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Entity Name        ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------------+--------------+
+; |LoadCounter_Demo            ; 82 (0)              ; 30 (0)                    ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |LoadCounter_Demo                         ; LoadCounter_Demo   ; work         ;
+;    |bin7segdecoder:inst2|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoadCounter_Demo|bin7segdecoder:inst2    ; bin7segdecoder     ; work         ;
+;    |counterloadupdown4:inst| ; 7 (7)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoadCounter_Demo|counterloadupdown4:inst ; counterloadupdown4 ; work         ;
+;    |debounceunit:inst24|     ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |LoadCounter_Demo|debounceunit:inst24     ; debounceunit       ; work         ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -229,22 +229,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Total registers                              ; 30    ;
 ; Number of registers using Synchronous Clear  ; 3     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 3     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 18    ;
+; Number of registers using Clock Enable       ; 21    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Counter_Demo|debounceunit:inst24|s_debouncecnt[19] ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |Counter_Demo|bin7segdecoder:inst2|decout_n[3]      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |LoadCounter_Demo|counterloadupdown4:inst|snum[3]       ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |LoadCounter_Demo|debounceunit:inst24|s_debouncecnt[18] ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |LoadCounter_Demo|bin7segdecoder:inst2|decout_n[3]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
 +------------------------------------------------------------------+
@@ -265,23 +266,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 15                          ;
+; boundary_port         ; 21                          ;
 ; cycloneiii_ff         ; 30                          ;
 ;     ENA               ; 18                          ;
-;     SCLR              ; 3                           ;
+;     ENA SCLR SLD      ; 3                           ;
 ;     plain             ; 9                           ;
-; cycloneiii_lcell_comb ; 80                          ;
+; cycloneiii_lcell_comb ; 82                          ;
 ;     arith             ; 25                          ;
 ;         2 data inputs ; 23                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 55                          ;
+;     normal            ; 57                          ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 20                          ;
-;         4 data inputs ; 30                          ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 31                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 4.20                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.91                        ;
 +-----------------------+-----------------------------+
 
 
@@ -300,7 +301,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Apr 11 10:46:00 2022
+    Info: Processing started: Mon Apr 11 11:16:56 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Counter_Demo -c Counter_Demo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -318,21 +319,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file Counter
 Info (12021): Found 2 design units, including 1 entities, in source file DebounceUnit.vhd
     Info (12022): Found design unit 1: debounceunit-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/DebounceUnit.vhd Line: 16
     Info (12023): Found entity 1: debounceunit File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/DebounceUnit.vhd Line: 5
-Info (12127): Elaborating entity "Counter_Demo" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file CounterLoadUpDown4.vhd
+    Info (12022): Found design unit 1: counterloadupdown4-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/CounterLoadUpDown4.vhd Line: 15
+    Info (12023): Found entity 1: counterloadupdown4 File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/CounterLoadUpDown4.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file LoadCounter_Demo.bdf
+    Info (12023): Found entity 1: LoadCounter_Demo
+Info (12127): Elaborating entity "LoadCounter_Demo" for the top level hierarchy
 Info (12128): Elaborating entity "bin7segdecoder" for hierarchy "bin7segdecoder:inst2"
-Info (12128): Elaborating entity "counterupdown4" for hierarchy "counterupdown4:inst"
+Info (12128): Elaborating entity "counterloadupdown4" for hierarchy "counterloadupdown4:inst"
 Info (12128): Elaborating entity "debounceunit" for hierarchy "debounceunit:inst24"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
+Info (21057): Implemented 104 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 81 logic cells
+    Info (21061): Implemented 83 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 938 megabytes
-    Info: Processing ended: Mon Apr 11 10:46:10 2022
+    Info: Peak virtual memory: 928 megabytes
+    Info: Processing ended: Mon Apr 11 11:17:06 2022
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Total CPU time (on all processors): 00:00:21
 
 
