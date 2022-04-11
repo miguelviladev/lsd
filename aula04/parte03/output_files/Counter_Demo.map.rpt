@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Counter_Demo
-Mon Apr 11 10:10:01 2022
+Mon Apr 11 10:46:10 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -15,9 +15,10 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: debounceunit:inst24
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +45,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 11 10:10:01 2022       ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 11 10:46:10 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; Counter_Demo                                ;
 ; Top-level Entity Name              ; Counter_Demo                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 12                                          ;
-;     Total combinational functions  ; 12                                          ;
-;     Dedicated logic registers      ; 4                                           ;
-; Total registers                    ; 4                                           ;
-; Total pins                         ; 14                                          ;
+; Total logic elements               ; 81                                          ;
+;     Total combinational functions  ; 80                                          ;
+;     Dedicated logic registers      ; 30                                          ;
+; Total registers                    ; 30                                          ;
+; Total pins                         ; 15                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -172,39 +173,40 @@ https://fpgasoftware.intel.com/eula.
 ; CounterUpDown4.vhd               ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/CounterUpDown4.vhd ;         ;
 ; Bin7SegDecoder.vhd               ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/Bin7SegDecoder.vhd ;         ;
 ; Counter_Demo.bdf                 ; yes             ; User Block Diagram/Schematic File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/Counter_Demo.bdf   ;         ;
+; DebounceUnit.vhd                 ; yes             ; User VHDL File                     ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/DebounceUnit.vhd   ;         ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                               ;
-+---------------------------------------------+-----------------------------+
-; Resource                                    ; Usage                       ;
-+---------------------------------------------+-----------------------------+
-; Estimated Total logic elements              ; 12                          ;
-;                                             ;                             ;
-; Total combinational functions               ; 12                          ;
-; Logic element usage by number of LUT inputs ;                             ;
-;     -- 4 input functions                    ; 7                           ;
-;     -- 3 input functions                    ; 2                           ;
-;     -- <=2 input functions                  ; 3                           ;
-;                                             ;                             ;
-; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 9                           ;
-;     -- arithmetic mode                      ; 3                           ;
-;                                             ;                             ;
-; Total registers                             ; 4                           ;
-;     -- Dedicated logic registers            ; 4                           ;
-;     -- I/O registers                        ; 0                           ;
-;                                             ;                             ;
-; I/O pins                                    ; 14                          ;
-;                                             ;                             ;
-; Embedded Multiplier 9-bit elements          ; 0                           ;
-;                                             ;                             ;
-; Maximum fan-out node                        ; counterupdown4:inst|snum[0] ;
-; Maximum fan-out                             ; 10                          ;
-; Total fan-out                               ; 76                          ;
-; Average fan-out                             ; 1.73                        ;
-+---------------------------------------------+-----------------------------+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                    ;
++---------------------------------------------+----------------------------------+
+; Resource                                    ; Usage                            ;
++---------------------------------------------+----------------------------------+
+; Estimated Total logic elements              ; 81                               ;
+;                                             ;                                  ;
+; Total combinational functions               ; 80                               ;
+; Logic element usage by number of LUT inputs ;                                  ;
+;     -- 4 input functions                    ; 30                               ;
+;     -- 3 input functions                    ; 22                               ;
+;     -- <=2 input functions                  ; 28                               ;
+;                                             ;                                  ;
+; Logic elements by mode                      ;                                  ;
+;     -- normal mode                          ; 55                               ;
+;     -- arithmetic mode                      ; 25                               ;
+;                                             ;                                  ;
+; Total registers                             ; 30                               ;
+;     -- Dedicated logic registers            ; 30                               ;
+;     -- I/O registers                        ; 0                                ;
+;                                             ;                                  ;
+; I/O pins                                    ; 15                               ;
+;                                             ;                                  ;
+; Embedded Multiplier 9-bit elements          ; 0                                ;
+;                                             ;                                  ;
+; Maximum fan-out node                        ; debounceunit:inst24|s_previousin ;
+; Maximum fan-out                             ; 26                               ;
+; Total fan-out                               ; 347                              ;
+; Average fan-out                             ; 2.48                             ;
++---------------------------------------------+----------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -212,9 +214,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                ; Entity Name    ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+----------------+--------------+
-; |Counter_Demo              ; 12 (0)              ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |Counter_Demo                      ; Counter_Demo   ; work         ;
+; |Counter_Demo              ; 80 (0)              ; 30 (0)                    ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |Counter_Demo                      ; Counter_Demo   ; work         ;
 ;    |bin7segdecoder:inst2|  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Counter_Demo|bin7segdecoder:inst2 ; bin7segdecoder ; work         ;
 ;    |counterupdown4:inst|   ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Counter_Demo|counterupdown4:inst  ; counterupdown4 ; work         ;
+;    |debounceunit:inst24|   ; 68 (68)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Counter_Demo|debounceunit:inst24  ; debounceunit   ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -224,23 +227,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
+; Total registers                              ; 30    ;
 ; Number of registers using Synchronous Clear  ; 3     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 18    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |Counter_Demo|bin7segdecoder:inst2|decout_n[6] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 5:1                ; 23 bits   ; 69 LEs        ; 46 LEs               ; 23 LEs                 ; Yes        ; |Counter_Demo|debounceunit:inst24|s_debouncecnt[19] ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |Counter_Demo|bin7segdecoder:inst2|decout_n[3]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounceunit:inst24 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; khzclkfreq     ; 50000 ; Signed Integer                          ;
+; msecmininwidth ; 100   ; Signed Integer                          ;
+; inpolarity     ; '0'   ; Enumerated                              ;
+; outpolarity    ; '1'   ; Enumerated                              ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -248,20 +265,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 14                          ;
-; cycloneiii_ff         ; 4                           ;
+; boundary_port         ; 15                          ;
+; cycloneiii_ff         ; 30                          ;
+;     ENA               ; 18                          ;
 ;     SCLR              ; 3                           ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 12                          ;
-;     arith             ; 3                           ;
-;         2 data inputs ; 1                           ;
+;     plain             ; 9                           ;
+; cycloneiii_lcell_comb ; 80                          ;
+;     arith             ; 25                          ;
+;         2 data inputs ; 23                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 9                           ;
-;         2 data inputs ; 2                           ;
-;         4 data inputs ; 7                           ;
+;     normal            ; 55                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 20                          ;
+;         4 data inputs ; 30                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.30                        ;
-; Average LUT depth     ; 1.06                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 4.20                        ;
 +-----------------------+-----------------------------+
 
 
@@ -280,7 +300,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Apr 11 10:09:52 2022
+    Info: Processing started: Mon Apr 11 10:46:00 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Counter_Demo -c Counter_Demo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -295,20 +315,24 @@ Info (12021): Found 2 design units, including 1 entities, in source file Bin7Seg
     Info (12023): Found entity 1: bin7segdecoder File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/Bin7SegDecoder.vhd Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file Counter_Demo.bdf
     Info (12023): Found entity 1: Counter_Demo
+Info (12021): Found 2 design units, including 1 entities, in source file DebounceUnit.vhd
+    Info (12022): Found design unit 1: debounceunit-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/DebounceUnit.vhd Line: 16
+    Info (12023): Found entity 1: debounceunit File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula04/parte03/DebounceUnit.vhd Line: 5
 Info (12127): Elaborating entity "Counter_Demo" for the top level hierarchy
 Info (12128): Elaborating entity "bin7segdecoder" for hierarchy "bin7segdecoder:inst2"
 Info (12128): Elaborating entity "counterupdown4" for hierarchy "counterupdown4:inst"
+Info (12128): Elaborating entity "debounceunit" for hierarchy "debounceunit:inst24"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 26 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 12 logic cells
+    Info (21061): Implemented 81 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 932 megabytes
-    Info: Processing ended: Mon Apr 11 10:10:01 2022
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Peak virtual memory: 938 megabytes
+    Info: Processing ended: Mon Apr 11 10:46:10 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:22
 
 

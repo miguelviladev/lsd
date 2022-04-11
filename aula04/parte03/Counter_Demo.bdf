@@ -22,7 +22,7 @@ https://fpgasoftware.intel.com/eula.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 184 112 352 128)
+	(rect 16 216 184 232)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "KEY[0]" (rect 5 0 40 13)(font "Intel Clear" ))
 	(pt 168 8)
@@ -35,6 +35,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -48 232 16 248))
 )
 (pin
 	(input)
@@ -51,6 +52,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 120 112 184 128))
 )
 (pin
 	(input)
@@ -67,6 +69,24 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 120 96 184 112))
+)
+(pin
+	(input)
+	(rect 16 200 184 216)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "CLOCK_50" (rect 5 0 62 11)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -40 192 16 208))
 )
 (pin
 	(output)
@@ -83,6 +103,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 920 96 984 112))
 )
 (pin
 	(output)
@@ -99,6 +120,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 920 152 984 168))
 )
 (symbol
 	(rect 352 56 520 168)
@@ -158,6 +180,56 @@ https://fpgasoftware.intel.com/eula.
 		(rectangle (rect 16 16 192 64))
 	)
 )
+(symbol
+	(rect 184 176 344 256)
+	(text "debounceunit" (rect 5 0 71 11)(font "Arial" ))
+	(text "inst24" (rect 8 64 37 75)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "refclk" (rect 0 0 27 11)(font "Arial" ))
+		(text "refclk" (rect 21 27 48 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "dirtyin" (rect 0 0 29 11)(font "Arial" ))
+		(text "dirtyin" (rect 21 43 50 54)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 160 32)
+		(output)
+		(text "pulsedout" (rect 0 0 48 11)(font "Arial" ))
+		(text "pulsedout" (rect 99 27 147 38)(font "Arial" ))
+		(line (pt 160 32)(pt 144 32))
+	)
+	(parameter
+		"khzclkfreq"
+		"50000"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"msecmininwidth"
+		"100"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"inpolarity"
+		"'0'"
+		""
+		(type "PARAMETER_ENUM")	)
+	(parameter
+		"outpolarity"
+		"'1'"
+		""
+		(type "PARAMETER_ENUM")	)
+	(drawing
+		(rectangle (rect 16 16 144 64))
+	)
+	(annotation_block (parameter)(rect 360 176 568 256))
+)
 (connector
 	(pt 528 88)
 	(pt 528 144)
@@ -177,5 +249,13 @@ https://fpgasoftware.intel.com/eula.
 	(pt 528 144)
 	(pt 744 144)
 	(bus)
+)
+(connector
+	(pt 352 120)
+	(pt 344 120)
+)
+(connector
+	(pt 344 120)
+	(pt 344 208)
 )
 (junction (pt 528 88))

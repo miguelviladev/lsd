@@ -2,40 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'KEY[0]'
-Slack : -0.795
-TNS   : -2.245
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -3.314
+TNS   : -74.829
 
-Type  : Slow 1200mV 85C Model Hold 'KEY[0]'
-Slack : 0.445
+Type  : Slow 1200mV 85C Model Setup 'debounceunit:inst24|s_pulsedout'
+Slack : -0.838
+TNS   : -1.985
+
+Type  : Slow 1200mV 85C Model Hold 'debounceunit:inst24|s_pulsedout'
+Slack : 0.409
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[0]'
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.646
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -8.140
+TNS   : -36.410
 
-Type  : Slow 1200mV 0C Model Setup 'KEY[0]'
-Slack : -0.616
-TNS   : -1.716
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debounceunit:inst24|s_pulsedout'
+Slack : -1.285
+TNS   : -5.140
 
-Type  : Slow 1200mV 0C Model Hold 'KEY[0]'
-Slack : 0.398
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -2.967
+TNS   : -66.085
+
+Type  : Slow 1200mV 0C Model Setup 'debounceunit:inst24|s_pulsedout'
+Slack : -0.649
+TNS   : -1.483
+
+Type  : Slow 1200mV 0C Model Hold 'debounceunit:inst24|s_pulsedout'
+Slack : 0.365
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.589
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -8.140
+TNS   : -36.410
 
-Type  : Fast 1200mV 0C Model Setup 'KEY[0]'
-Slack : 0.144
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debounceunit:inst24|s_pulsedout'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.127
+TNS   : -24.154
+
+Type  : Fast 1200mV 0C Model Setup 'debounceunit:inst24|s_pulsedout'
+Slack : 0.110
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'KEY[0]'
-Slack : 0.208
+Type  : Fast 1200mV 0C Model Hold 'debounceunit:inst24|s_pulsedout'
+Slack : 0.189
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.287
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -7.568
+TNS   : -30.641
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debounceunit:inst24|s_pulsedout'
+Slack : -1.000
+TNS   : -4.000
 
 ------------------------------------------------------------

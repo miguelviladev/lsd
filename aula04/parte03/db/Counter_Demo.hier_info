@@ -8,7 +8,8 @@ HEX0[5] <= bin7segdecoder:inst2.decout_n[5]
 HEX0[6] <= bin7segdecoder:inst2.decout_n[6]
 SW[0] => counterupdown4:inst.updow
 SW[1] => counterupdown4:inst.reset
-KEY[0] => counterupdown4:inst.clock
+CLOCK_50 => debounceunit:inst24.refclk
+KEY[0] => debounceunit:inst24.dirtyin
 LEDR[0] <= counterupdown4:inst.count[0]
 LEDR[1] <= counterupdown4:inst.count[1]
 LEDR[2] <= counterupdown4:inst.count[2]
@@ -102,5 +103,36 @@ count[0] <= snum[0].DB_MAX_OUTPUT_PORT_TYPE
 count[1] <= snum[1].DB_MAX_OUTPUT_PORT_TYPE
 count[2] <= snum[2].DB_MAX_OUTPUT_PORT_TYPE
 count[3] <= snum[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter_Demo|debounceunit:inst24
+refclk => s_pulsedout.CLK
+refclk => s_debouncecnt[0].CLK
+refclk => s_debouncecnt[1].CLK
+refclk => s_debouncecnt[2].CLK
+refclk => s_debouncecnt[3].CLK
+refclk => s_debouncecnt[4].CLK
+refclk => s_debouncecnt[5].CLK
+refclk => s_debouncecnt[6].CLK
+refclk => s_debouncecnt[7].CLK
+refclk => s_debouncecnt[8].CLK
+refclk => s_debouncecnt[9].CLK
+refclk => s_debouncecnt[10].CLK
+refclk => s_debouncecnt[11].CLK
+refclk => s_debouncecnt[12].CLK
+refclk => s_debouncecnt[13].CLK
+refclk => s_debouncecnt[14].CLK
+refclk => s_debouncecnt[15].CLK
+refclk => s_debouncecnt[16].CLK
+refclk => s_debouncecnt[17].CLK
+refclk => s_debouncecnt[18].CLK
+refclk => s_debouncecnt[19].CLK
+refclk => s_debouncecnt[20].CLK
+refclk => s_debouncecnt[21].CLK
+refclk => s_debouncecnt[22].CLK
+refclk => s_previousin.CLK
+refclk => s_dirtyin.CLK
+dirtyin => s_dirtyin.DATAIN
+pulsedout <= s_pulsedout.DB_MAX_OUTPUT_PORT_TYPE
 
 
