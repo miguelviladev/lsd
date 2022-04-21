@@ -1,0 +1,12 @@
+|ShiftRegister4
+serialin => sdataout[0].DATAIN
+clockin => sdataout[0].CLK
+clockin => sdataout[1].CLK
+clockin => sdataout[2].CLK
+clockin => sdataout[3].CLK
+dataout[0] <= sdataout[0].DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] <= sdataout[1].DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] <= sdataout[2].DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] <= sdataout[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

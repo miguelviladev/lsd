@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "dataout[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dataout[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dataout[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dataout[3]",
+					"strict" : false
+				},
+				{
+					"name" : "serialin",
+					"strict" : false
+				},
+				{
+					"name" : "clockin",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
