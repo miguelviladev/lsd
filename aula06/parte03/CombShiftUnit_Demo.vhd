@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity combshiftunit_demo is
 	generic (d : positive := 50_000_000);
-	port(sw : in std_logic_vector(17 downto 0);
+	port(sw : in std_logic_vector(11 downto 0);
 		  clock_50 : in std_logic;
 		  key  : in  std_logic_vector(2 downto 0);
 		  ledr : out std_logic_vector(7 downto 0));
@@ -19,7 +19,7 @@ begin
 
 	shreg : entity work.combshiftunit(behavioral)
 	port map(datain => sw(7 downto 0),
-				shamount => sw(17 downto 15),
+				shamount => sw(11 downto 9),
 				loaden => sw(8),
 				rotate => key(0),
 				dirleft => key(1),

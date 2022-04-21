@@ -8,27 +8,21 @@ sw[5] => combshiftunit:shreg.datain[5]
 sw[6] => combshiftunit:shreg.datain[6]
 sw[7] => combshiftunit:shreg.datain[7]
 sw[8] => combshiftunit:shreg.loaden
-sw[9] => ~NO_FANOUT~
-sw[10] => ~NO_FANOUT~
-sw[11] => ~NO_FANOUT~
-sw[12] => ~NO_FANOUT~
-sw[13] => ~NO_FANOUT~
-sw[14] => ~NO_FANOUT~
-sw[15] => combshiftunit:shreg.shamount[0]
-sw[16] => combshiftunit:shreg.shamount[1]
-sw[17] => combshiftunit:shreg.shamount[2]
+sw[9] => combshiftunit:shreg.shamount[0]
+sw[10] => combshiftunit:shreg.shamount[1]
+sw[11] => combshiftunit:shreg.shamount[2]
 clock_50 => clockdividern:freqd.clkin
 key[0] => combshiftunit:shreg.rotate
 key[1] => combshiftunit:shreg.dirleft
 key[2] => combshiftunit:shreg.sharith
-ledr[0] << combshiftunit:shreg.dataout[0]
-ledr[1] << combshiftunit:shreg.dataout[1]
-ledr[2] << combshiftunit:shreg.dataout[2]
-ledr[3] << combshiftunit:shreg.dataout[3]
-ledr[4] << combshiftunit:shreg.dataout[4]
-ledr[5] << combshiftunit:shreg.dataout[5]
-ledr[6] << combshiftunit:shreg.dataout[6]
-ledr[7] << combshiftunit:shreg.dataout[7]
+ledr[0] <= combshiftunit:shreg.dataout[0]
+ledr[1] <= combshiftunit:shreg.dataout[1]
+ledr[2] <= combshiftunit:shreg.dataout[2]
+ledr[3] <= combshiftunit:shreg.dataout[3]
+ledr[4] <= combshiftunit:shreg.dataout[4]
+ledr[5] <= combshiftunit:shreg.dataout[5]
+ledr[6] <= combshiftunit:shreg.dataout[6]
+ledr[7] <= combshiftunit:shreg.dataout[7]
 
 
 |CombShiftUnit_Demo|clockdividern:freqd
