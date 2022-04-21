@@ -1,5 +1,5 @@
 Flow report for ShiftRegister_Demo
-Thu Apr 21 08:07:48 2022
+Thu Apr 21 10:05:43 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,22 +41,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Apr 21 08:07:48 2022       ;
+; Flow Status                        ; Successful - Thu Apr 21 10:05:43 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; ShiftRegister_Demo                          ;
-; Top-level Entity Name              ; shiftregister4                              ;
+; Top-level Entity Name              ; shiftregister_demo                          ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 4                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 4                                           ;
-; Total registers                    ; 4                                           ;
-; Total pins                         ; 6                                           ;
+; Total logic elements               ; 52 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 43 / 114,480 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 35 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 35                                          ;
+; Total pins                         ; 10 / 529 ( 2 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -65,34 +65,33 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/21/2022 08:05:00 ;
+; Start date & time ; 04/21/2022 10:05:15 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ShiftRegister_Demo  ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                       ;
-+-------------------------------------+----------------------------------------+--------------------+----------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value      ; Entity Name    ; Section Id                        ;
-+-------------------------------------+----------------------------------------+--------------------+----------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 137175987548783.165052470002696        ; --                 ; --             ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                 ; --             ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                 ; --             ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                 ; --             ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                 ; --             ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --                 ; --             ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>             ; --             ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --                 ; --             ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                 ; --             ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                 ; --             ; --                                ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --                 ; --             ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                 ; ShiftRegister4 ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                 ; ShiftRegister4 ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                 ; ShiftRegister4 ; Top                               ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                 ; --             ; --                                ;
-; TOP_LEVEL_ENTITY                    ; ShiftRegister4                         ; ShiftRegister_Demo ; --             ; --                                ;
-+-------------------------------------+----------------------------------------+--------------------+----------------+-----------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                               ;
++-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 115052579713273.165053191507183        ; --            ; --          ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
++-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -100,10 +99,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 991 MB              ; 00:00:13                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1025 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1030 MB             ; 00:00:00                           ;
-; Total                ; 00:00:06     ; --                      ; --                  ; 00:00:13                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 918 MB              ; 00:00:20                           ;
+; Fitter               ; 00:00:12     ; 1.0                     ; 1416 MB             ; 00:00:17                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 808 MB              ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 857 MB              ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1028 MB             ; 00:00:00                           ;
+; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:42                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -113,7 +114,9 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
 +----------------------+------------------+----------------+------------+----------------+
 ; Analysis & Synthesis ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; Fitter               ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; Assembler            ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; Timing Analyzer      ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
 ; EDA Netlist Writer   ; vpub             ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
@@ -122,8 +125,10 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off ShiftRegister_Demo -c ShiftRegister_Demo
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ShiftRegister_Demo -c ShiftRegister_Demo --vector_source=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegister4Sim.vwf --testbench_file=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/simulation/qsim/ShiftRegister4Sim.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/simulation/qsim/ ShiftRegister_Demo -c ShiftRegister_Demo
+quartus_fit --read_settings_files=off --write_settings_files=off ShiftRegister_Demo -c ShiftRegister_Demo
+quartus_asm --read_settings_files=off --write_settings_files=off ShiftRegister_Demo -c ShiftRegister_Demo
+quartus_sta ShiftRegister_Demo -c ShiftRegister_Demo
+quartus_eda --read_settings_files=off --write_settings_files=off ShiftRegister_Demo -c ShiftRegister_Demo
 
 
 

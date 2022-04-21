@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ShiftRegister_Demo
-Thu Apr 21 08:05:06 2022
+Thu Apr 21 10:05:24 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -14,9 +14,12 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |ShiftRegister_Demo
+ 10. Parameter Settings for User Entity Instance: clkdividern:freqd
+ 11. Parameter Settings for User Entity Instance: shiftregistern:shreg
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 21 08:05:06 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 21 10:05:24 2022       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; ShiftRegister_Demo                          ;
-; Top-level Entity Name              ; shiftregister4                              ;
+; Top-level Entity Name              ; shiftregister_demo                          ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 4                                           ;
-; Total registers                    ; 4                                           ;
-; Total pins                         ; 6                                           ;
+; Total logic elements               ; 51                                          ;
+;     Total combinational functions  ; 43                                          ;
+;     Dedicated logic registers      ; 35                                          ;
+; Total registers                    ; 35                                          ;
+; Total pins                         ; 10                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -66,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; ShiftRegister4     ; ShiftRegister_Demo ;
+; Top-level entity name                                            ; ShiftRegister_Demo ; ShiftRegister_Demo ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -151,66 +154,70 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
-; ShiftRegister4.vhd               ; yes             ; User VHDL File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegister4.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+; ShiftRegisterN.vhd               ; yes             ; User VHDL File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegisterN.vhd     ;         ;
+; ClkDividerN.vhd                  ; yes             ; User VHDL File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ClkDividerN.vhd        ;         ;
+; ShiftRegister_Demo.vhd           ; yes             ; User VHDL File  ; /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegister_Demo.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 4             ;
-;                                             ;               ;
-; Total combinational functions               ; 0             ;
-; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 0             ;
-;     -- 3 input functions                    ; 0             ;
-;     -- <=2 input functions                  ; 0             ;
-;                                             ;               ;
-; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 0             ;
-;     -- arithmetic mode                      ; 0             ;
-;                                             ;               ;
-; Total registers                             ; 4             ;
-;     -- Dedicated logic registers            ; 4             ;
-;     -- I/O registers                        ; 0             ;
-;                                             ;               ;
-; I/O pins                                    ; 6             ;
-;                                             ;               ;
-; Embedded Multiplier 9-bit elements          ; 0             ;
-;                                             ;               ;
-; Maximum fan-out node                        ; clockin~input ;
-; Maximum fan-out                             ; 4             ;
-; Total fan-out                               ; 18            ;
-; Average fan-out                             ; 1.12          ;
-+---------------------------------------------+---------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 51             ;
+;                                             ;                ;
+; Total combinational functions               ; 43             ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 14             ;
+;     -- 3 input functions                    ; 3              ;
+;     -- <=2 input functions                  ; 26             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 18             ;
+;     -- arithmetic mode                      ; 25             ;
+;                                             ;                ;
+; Total registers                             ; 35             ;
+;     -- Dedicated logic registers            ; 35             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 10             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; clock_50~input ;
+; Maximum fan-out                             ; 27             ;
+; Total fan-out                               ; 230            ;
+; Average fan-out                             ; 2.35           ;
++---------------------------------------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name    ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+----------------+--------------+
-; |shiftregister4            ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |shiftregister4     ; shiftregister4 ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name        ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------------+--------------+
+; |shiftregister_demo        ; 43 (0)              ; 35 (0)                    ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |shiftregister_demo                      ; shiftregister_demo ; work         ;
+;    |clkdividern:freqd|     ; 43 (43)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shiftregister_demo|clkdividern:freqd    ; clkdividern        ; work         ;
+;    |shiftregistern:shreg|  ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |shiftregister_demo|shiftregistern:shreg ; shiftregistern     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -219,8 +226,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 35    ;
+; Number of registers using Synchronous Clear  ; 26    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -229,18 +236,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ShiftRegister_Demo ;
++----------------+----------+--------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                   ;
++----------------+----------+--------------------------------------------------------+
+; n              ; 8        ; Signed Integer                                         ;
+; d              ; 50000000 ; Signed Integer                                         ;
++----------------+----------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clkdividern:freqd ;
++----------------+----------+------------------------------------+
+; Parameter Name ; Value    ; Type                               ;
++----------------+----------+------------------------------------+
+; divfactor      ; 50000000 ; Signed Integer                     ;
++----------------+----------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: shiftregistern:shreg ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; n              ; 8     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 6                               ;
-; cycloneiii_ff     ; 4                               ;
-;     plain         ; 4                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 10                          ;
+; cycloneiii_ff         ; 35                          ;
+;     SCLR              ; 26                          ;
+;     plain             ; 9                           ;
+; cycloneiii_lcell_comb ; 43                          ;
+;     arith             ; 25                          ;
+;         2 data inputs ; 25                          ;
+;     normal            ; 18                          ;
+;         1 data inputs ; 1                           ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 14                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.01                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -258,25 +304,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Apr 21 08:05:00 2022
+    Info: Processing started: Thu Apr 21 10:05:14 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ShiftRegister_Demo -c ShiftRegister_Demo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ShiftRegister4.vhd
     Info (12022): Found design unit 1: shiftregister4-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegister4.vhd Line: 9
     Info (12023): Found entity 1: shiftregister4 File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegister4.vhd Line: 4
-Info (12127): Elaborating entity "ShiftRegister4" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file ShiftRegisterN.vhd
+    Info (12022): Found design unit 1: shiftregistern-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegisterN.vhd Line: 10
+    Info (12023): Found entity 1: shiftregistern File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegisterN.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ClkDividerN.vhd
+    Info (12022): Found design unit 1: clkdividern-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ClkDividerN.vhd Line: 11
+    Info (12023): Found entity 1: clkdividern File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ClkDividerN.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ShiftRegister_Demo.vhd
+    Info (12022): Found design unit 1: shiftregister_demo-behavioral File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegister_Demo.vhd Line: 12
+    Info (12023): Found entity 1: shiftregister_demo File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegister_Demo.vhd Line: 4
+Info (12127): Elaborating entity "ShiftRegister_Demo" for the top level hierarchy
+Info (12129): Elaborating entity "clkdividern" using architecture "A:behavioral" for hierarchy "clkdividern:freqd" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegister_Demo.vhd Line: 15
+Info (12129): Elaborating entity "shiftregistern" using architecture "A:behavioral" for hierarchy "shiftregistern:shreg" File: /home/maomv/Repositories/laboratorio-de-sistemas-digitais/aula06/parte01/ShiftRegister_Demo.vhd Line: 20
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 10 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 61 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 4 logic cells
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 51 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 1001 megabytes
-    Info: Processing ended: Thu Apr 21 08:05:06 2022
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 925 megabytes
+    Info: Processing ended: Thu Apr 21 10:05:24 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
 
 
