@@ -223,3 +223,5 @@
 #    Time: 5447 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
 # 
 # stdin: <EOF>
+# End time: 02:09:47 on May 05,2022, Elapsed time: 0:38:05
+# Errors: 0, Warnings: 75
