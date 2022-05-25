@@ -1,20 +1,21 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 
-entity bin2bcd is
-	port (rinport : in std_logic_vector(3 downto 0);
-			minport : in std_logic_vector(3 downto 0);
-	      binout0 : out std_logic_vector(3 downto 0);
-			binout1 : out std_logic_vector(3 downto 0);
-			binout2 : out std_logic_vector(3 downto 0));
-end bin2bcd;
+ENTITY bin2bcd IS
+	PORT (
+		rinport : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		minport : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		binout0 : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		binout1 : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		binout2 : OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
+END bin2bcd;
 
-architecture behavioral of bin2bcd is
-	signal rmsignal : unsigned(7 downto 0);
-begin
+ARCHITECTURE behavioral OF bin2bcd IS
+	SIGNAL rmsignal : unsigned(7 DOWNTO 0);
+BEGIN
 	rmsignal <= unsigned(minport) & unsigned(rinport);
-	binout2  <= std_logic_vector(rmsignal/100)(3 downto 0);
-	binout1  <= std_logic_vector((rmsignal rem 100)/10)(3 downto 0);
-	binout0  <= std_logic_vector((rmsignal rem 100) rem 10)(3 downto 0);
-end behavioral;
+	binout2 <= STD_LOGIC_VECTOR(rmsignal/100)(3 DOWNTO 0);
+	binout1 <= STD_LOGIC_VECTOR((rmsignal REM 100)/10)(3 DOWNTO 0);
+	binout0 <= STD_LOGIC_VECTOR((rmsignal REM 100) REM 10)(3 DOWNTO 0);
+END behavioral;
