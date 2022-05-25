@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu May 19 12:58:52 2022
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Revision Name : ShiftReg6Bits
+Top-level Entity Name : ShiftReg6Bits
+Family : Cyclone IV E
+Total logic elements : 265
+    Total combinational functions : 256
+    Dedicated logic registers : 87
+Total registers : 87
+Total pins : 24
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
