@@ -1,0 +1,20 @@
+library ieee; 
+use ieee.std_logic_1164.all;
+
+entity contadorincdecnbitstb is
+end contadorincdecnbitstb;
+
+architecture stimulus of contadorincdecnbitstb is
+	signal s_resetar, s_incdec, s_entradaclock, s_contagem : std_logic;
+begin
+	uut   : entity work.contadorincdecnbits(behavioral)
+			  port map(resetar      => s_resetar,
+						  incdec       => s_incdec,
+			           entradaclock => s_entradaclock,
+						  contagem     => s_contagem);
+	process is
+	begin
+		s_entradaclock <= '0'; wait for 10 ns;
+		s_entradaclock <= '1'; wait for 10 ns;
+	end process;
+end stimulus;

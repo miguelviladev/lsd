@@ -1,0 +1,20 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity debouncerunittb is
+end debouncerunittb;
+
+architecture stimulus of debouncerunittb is
+	signal s_50mhzclock : std_logic;
+begin
+	uut   : entity work.debouncerunit(behavioral)
+			  port map(entradaclock  => s_entradaclock,
+						  saidaclock    => s_saidaclock  );
+						  
+	clock : process is
+	begin
+		s_50mhzclock <= '0'; wait for 10 ns;
+		s_50mhzclock <= '1'; wait for 10 ns;
+	end process;
+	
+end stimulus;

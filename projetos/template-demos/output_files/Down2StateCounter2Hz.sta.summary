@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock_50'
+Slack : -3.363
+TNS   : -146.987
+
+Type  : Slow 1200mV 85C Model Setup 'geradorpulsosn:pulso2hz|saidasinal'
+Slack : -0.618
+TNS   : -1.644
+
+Type  : Slow 1200mV 85C Model Hold 'geradorpulsosn:pulso2hz|saidasinal'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock_50'
+Slack : 0.423
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50'
+Slack : -3.000
+TNS   : -71.105
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'geradorpulsosn:pulso2hz|saidasinal'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 0C Model Setup 'clock_50'
+Slack : -3.021
+TNS   : -131.397
+
+Type  : Slow 1200mV 0C Model Setup 'geradorpulsosn:pulso2hz|saidasinal'
+Slack : -0.465
+TNS   : -1.208
+
+Type  : Slow 1200mV 0C Model Hold 'geradorpulsosn:pulso2hz|saidasinal'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock_50'
+Slack : 0.384
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50'
+Slack : -3.000
+TNS   : -71.105
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'geradorpulsosn:pulso2hz|saidasinal'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Fast 1200mV 0C Model Setup 'clock_50'
+Slack : -1.181
+TNS   : -44.740
+
+Type  : Fast 1200mV 0C Model Setup 'geradorpulsosn:pulso2hz|saidasinal'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'geradorpulsosn:pulso2hz|saidasinal'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock_50'
+Slack : 0.191
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50'
+Slack : -3.000
+TNS   : -59.478
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'geradorpulsosn:pulso2hz|saidasinal'
+Slack : -1.000
+TNS   : -4.000
+
+------------------------------------------------------------
