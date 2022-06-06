@@ -24,6 +24,6 @@ O repositório é composto essencialmente por 2 pastas:
 
 # LICENÇA
 
-[Laboratório de Sistemas Digitais](https://github.com/miguelviladev/laboratorio-de-sistemas-digitais), por [Miguel Vila](https://github.com/miguelviladev), está licenciado com a licença [CC0 1.0](LICENSE).
+[Laboratório de Sistemas Digitais](https://github.com/miguelviladev/lsd), por [Miguel Vila](https://github.com/miguelviladev), está licenciado com a licença [CC0 1.0](LICENSE).
 
 Isto significa que não existem direitos de autor nem direitos conexos na medida permitida por lei. Ou seja, este repositório pertence ao domínio público, excepto os enunciados. Assim, podes copiar, modificar, distribuir e executar o trabalho sem pedir autorização ou atribuir quaisquer créditos.
