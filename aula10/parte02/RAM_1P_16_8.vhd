@@ -7,7 +7,7 @@ USE ieee.numeric_std.ALL;
 ENTITY RAM_1P_16_8 IS
     PORT (
         clk : IN STD_LOGIC;
-        address : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        address : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
         writeEnable : IN STD_LOGIC;
         writeData : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         readData : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
